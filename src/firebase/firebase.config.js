@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_apiKey,
-  authDomain: import.meta.env.VITE_authDomain,
-  projectId: import.meta.env.VITE_projectId,
-  storageBucket: import.meta.env.VITE_storageBucket,
-  messagingSenderId: import.meta.env.VITE_messagingSenderId,
-  appId: import.meta.env.VITE_appId,
+  apiKey: "AIzaSyAS1uWy0Cv7ekXRxh5SgOdSfnPcImERg84",
+  authDomain: "foundify-raufur-a11.firebaseapp.com",
+  projectId: "foundify-raufur-a11",
+  storageBucket: "foundify-raufur-a11.firebasestorage.app",
+  messagingSenderId: "238948365461",
+  appId: "1:238948365461:web:287ad3dddd413ba4a9979c",
 };
 
 // Initialize Firebase
