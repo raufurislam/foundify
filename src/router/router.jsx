@@ -7,6 +7,8 @@ import AddFoundAndLostItemPage from "../pages/AddFound&LostPage.jsx/AddFoundAndL
 import Register from "../pages/auth/Register/Register";
 import Login from "../pages/auth/Login/Login";
 import PrivateRoute from "../provider/PrivateRoute";
+import AllItem from "../pages/AllLostAndFoundItem/AllItem";
+import DetailsPage from "../pages/DetailsPage/DetailsPage";
 
 const router = createBrowserRouter([
   {
@@ -22,7 +24,7 @@ const router = createBrowserRouter([
       // All Item Page
       {
         path: "/allItem",
-        element: <h1>All Item</h1>,
+        element: <AllItem></AllItem>,
       },
 
       // Add Lost And Found Item Page
@@ -33,6 +35,12 @@ const router = createBrowserRouter([
             <AddFoundAndLostItemPage></AddFoundAndLostItemPage>
           </PrivateRoute>
         ),
+      },
+
+      // Details Page
+      {
+        path: "/item/:id",
+        element: <DetailsPage></DetailsPage>,
       },
 
       // All Recover Item Page
