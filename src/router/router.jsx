@@ -9,6 +9,7 @@ import Login from "../pages/auth/Login/Login";
 import PrivateRoute from "../provider/PrivateRoute";
 import AllItem from "../pages/AllLostAndFoundItem/AllItem";
 import DetailsPage from "../pages/DetailsPage/DetailsPage";
+import ManageMyItems from "../pages/ManageMyItems/ManageMyItem";
 
 const router = createBrowserRouter([
   {
@@ -40,7 +41,11 @@ const router = createBrowserRouter([
       // Details Page
       {
         path: "/item/:id",
-        element: <DetailsPage></DetailsPage>,
+        element: (
+          <PrivateRoute>
+            <DetailsPage></DetailsPage>
+          </PrivateRoute>
+        ),
       },
 
       // All Recover Item Page
@@ -52,7 +57,15 @@ const router = createBrowserRouter([
       // Manage My Item
       {
         path: "/myItems",
-        element: <h1>Manage My Item</h1>,
+        element: <ManageMyItems></ManageMyItems>,
+        // <h1>Manage My Item</h1>,
+      },
+
+      // Update Item
+      {
+        path: "/updateItems/:id",
+        element: <h1>Updated page</h1>,
+        // <h1>Manage My Item</h1>,
       },
 
       // Auth Page
