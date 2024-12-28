@@ -1,12 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProviders";
 import Swal from "sweetalert2";
-import { div } from "motion/react-client";
+import empty from "../../assets/lottie/empty.json";
+import Lottie from "lottie-react";
+import { Link } from "react-router-dom";
 
 const ManageMyItems = () => {
   const { user } = useContext(AuthContext);
   const [myItems, setMyItems] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [selectedItem, setSelectedItem] = useState(null);
 
   // Fetch user-specific items
   useEffect(() => {
@@ -49,30 +52,73 @@ const ManageMyItems = () => {
     });
   };
 
+  // Update an item
+  const handleUpdate = (id) => {
+    const item = myItems.find((item) => item._id === id);
+    setSelectedItem(item); // Set the selected item for modal
+  };
+
+  const handleSaveUpdate = (updatedData) => {
+    fetch(`http://localhost:5000/items/${selectedItem._id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(updatedData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount > 0) {
+          Swal.fire("Updated!", "Your item has been updated.", "success");
+          const updatedItems = myItems.map((item) =>
+            item._id === selectedItem._id ? { ...item, ...updatedData } : item
+          );
+          setMyItems(updatedItems);
+          setSelectedItem(null); // Close the modal
+        }
+      })
+      .catch((err) => console.error(err));
+  };
+
   if (loading) {
     return <div className="text-center">Loading...</div>;
   }
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Manage My Items</h1>
+    <div className="max-w-screen-xl mx-auto lg:px-2 px-4">
+      {/* ....................................... */}
+      {/* <div className="bg-base-200 py-16 rounded-xl">
+        <h1 className="text-center text-4xl font-semibold">Manage My Items</h1>
+      </div> */}
+      {/* ....................................... */}
+      <div className="bg-base-200 py-16 rounded-xl">
+        <h1 className="text-center text-4xl font-semibold">Manage My Items</h1>
+      </div>
       {myItems.length === 0 ? (
-        <div className="text-center">
-          <p className="text-xl text-gray-600">
-            No items found! Start adding lost or found items.
-          </p>
+        <div className="max-w-screen-lg mx-auto text-center grid grid-cols-1 md:grid-cols-2 mt-12 items-center justify-between gap-5">
+          <div className="md:ml-12">
+            <Lottie className="w-[400px]" loop={true} animationData={empty} />
+          </div>
+          <div className="md:text-left text-center mt-5 md:mt-0">
+            <p className="text-2xl text-gray-600">
+              <span className="font-semibold text-2xl">No items found!</span>{" "}
+              <br />
+              <span className="text-xl">Start adding lost or found items.</span>
+            </p>
+            <Link to="/addItem" className="btn btn-primary mt-3">
+              Add Lost & Found
+            </Link>
+          </div>
         </div>
       ) : (
-        // this is table
-        <div>
+        <div className="mt-12">
+          {/* Desktop Version */}
           <div className="hidden md:block">
             <table className="table w-full">
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>Title</th>
+                  <th>Thumbnail</th>
+                  <th>Title </th>
                   <th>Post Type</th>
-                  <th>Category</th>
                   <th>Location</th>
                   <th>Date Submitted</th>
                   <th className="text-right">Actions</th>
@@ -80,21 +126,33 @@ const ManageMyItems = () => {
               </thead>
               <tbody>
                 {myItems.map((item, index) => (
-                  <tr key={item._id} className="hover:bg-base-300">
+                  <tr key={item._id} className="hover:bg-base-200">
                     <td>{index + 1}</td>
+                    <td>
+                      <img
+                        src={item.thumbnail}
+                        alt=""
+                        className="h-24 w-36 object-cover"
+                      />
+                    </td>
                     <td className="font-medium">{item.title}</td>
                     <td>{item.postType}</td>
-                    <td>{item.category}</td>
+                    {/* <td>{item.category}</td> */}
                     <td>{item.location}</td>
                     <td>{new Date(item.date).toLocaleDateString()}</td>
-                    <td className="text-right flex justify-end gap-2 mt-6">
+                    <td className="text-right flex justify-end gap-2 mt-8">
                       <button
                         onClick={() => handleDelete(item._id)}
                         className="btn btn-error btn-sm"
                       >
                         Delete
                       </button>
-                      <button className="btn btn-primary btn-sm">Update</button>
+                      <button
+                        onClick={() => handleUpdate(item._id)}
+                        className="btn btn-primary btn-sm"
+                      >
+                        Update
+                      </button>
                     </td>
                   </tr>
                 ))}
@@ -115,11 +173,8 @@ const ManageMyItems = () => {
                     alt=""
                     className="w-full h-44 object-cover rounded-lg"
                   />
-                  {/* <span className="font-bold">Title:</span> */}
                 </div>
-                <div className="mt-4 mb-2 font-bold text-xl">
-                  <span className="">#</span> {index + 1}
-                </div>
+                <div className="mt-4 mb-2 font-bold text-xl">#{index + 1}</div>
                 <div className="mb-2">
                   <span className="font-bold">Title:</span> {item.title}
                 </div>
@@ -132,15 +187,15 @@ const ManageMyItems = () => {
                 <div className="mb-2">
                   <span className="font-bold">Location:</span> {item.location}
                 </div>
-                <div className="flex flex-col md:flex-row gap-2 mt-4">
+                <div className="flex flex-col gap-2 mt-4">
                   <button
-                    className="btn btn-sm btn-primary w-full"
+                    className="btn btn-sm btn-primary"
                     onClick={() => handleUpdate(item._id)}
                   >
                     Update
                   </button>
                   <button
-                    className="btn btn-sm btn-error w-full"
+                    className="btn btn-sm btn-error"
                     onClick={() => handleDelete(item._id)}
                   >
                     Delete
@@ -149,6 +204,88 @@ const ManageMyItems = () => {
               </div>
             ))}
           </div>
+
+          {/* Update Modal */}
+          {selectedItem && (
+            <div className="modal modal-open">
+              <div className="modal-box">
+                <h3 className="font-bold text-lg">Update Item</h3>
+                <form
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    const updatedData = {
+                      title: e.target.title.value,
+                      thumbnail: e.target.thumbnail.value,
+                      postType: e.target.postType.value,
+                      category: e.target.category.value,
+                      location: e.target.location.value,
+                    };
+                    handleSaveUpdate(updatedData);
+                  }}
+                >
+                  <div className="form-control">
+                    <label className="label">Title</label>
+                    <input
+                      type="text"
+                      name="title"
+                      defaultValue={selectedItem.title}
+                      className="input input-bordered"
+                    />
+                  </div>
+                  <div className="form-control">
+                    <label className="label">Thumbnail</label>
+                    <input
+                      type="url"
+                      name="thumbnail"
+                      defaultValue={selectedItem.thumbnail}
+                      className="input input-bordered"
+                    />
+                  </div>
+                  <div className="form-control">
+                    <label className="label">Post Type</label>
+                    <select
+                      name="postType"
+                      defaultValue={selectedItem.postType}
+                      className="select select-bordered"
+                    >
+                      <option>Lost</option>
+                      <option>Found</option>
+                    </select>
+                  </div>
+                  <div className="form-control">
+                    <label className="label">Category</label>
+                    <input
+                      type="text"
+                      name="category"
+                      defaultValue={selectedItem.category}
+                      className="input input-bordered"
+                    />
+                  </div>
+                  <div className="form-control">
+                    <label className="label">Location</label>
+                    <input
+                      type="text"
+                      name="location"
+                      defaultValue={selectedItem.location}
+                      className="input input-bordered"
+                    />
+                  </div>
+                  <div className="modal-action">
+                    <button type="submit" className="btn btn-primary">
+                      Save
+                    </button>
+                    <button
+                      type="button"
+                      className="btn"
+                      onClick={() => setSelectedItem(null)}
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          )}
         </div>
       )}
     </div>
