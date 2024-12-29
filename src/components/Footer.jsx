@@ -1,4 +1,7 @@
 import React from "react";
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { GrFacebookOption } from "react-icons/gr";
 
 const Footer = () => {
   return (
@@ -65,25 +68,25 @@ const Footer = () => {
               href="https://facebook.com"
               className="w-10 h-10 bg-gray-600 rounded-full flex items-center justify-center hover:bg-blue-600"
             >
-              <i className="fab fa-facebook-f text-white"></i>
+              <GrFacebookOption />
             </a>
             <a
               href="https://twitter.com"
               className="w-10 h-10 bg-gray-600 rounded-full flex items-center justify-center hover:bg-blue-400"
             >
-              <i className="fab fa-twitter text-white"></i>
+              <FaXTwitter />
             </a>
             <a
               href="https://instagram.com"
               className="w-10 h-10 bg-gray-600 rounded-full flex items-center justify-center hover:bg-pink-500"
             >
-              <i className="fab fa-instagram text-white"></i>
+              <FaInstagram />
             </a>
             <a
               href="https://linkedin.com"
               className="w-10 h-10 bg-gray-600 rounded-full flex items-center justify-center hover:bg-blue-700"
             >
-              <i className="fab fa-linkedin-in text-white"></i>
+              <FaLinkedinIn />
             </a>
           </div>
         </div>
