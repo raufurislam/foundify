@@ -11,6 +11,9 @@ const Home = () => {
       <div>
         <LatestLostAndFound></LatestLostAndFound>
       </div>
+      <div>
+        <LatestLostAndFound></LatestLostAndFound>
+      </div>
     </div>
   );
 };
