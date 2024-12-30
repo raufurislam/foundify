@@ -5,6 +5,8 @@ import empty from "../../assets/lottie/empty.json";
 import Lottie from "lottie-react";
 import { Link } from "react-router-dom";
 import Loading from "../loading/Loading";
+import axios from "axios";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const ManageMyItems = () => {
   const { user } = useContext(AuthContext);
@@ -12,16 +14,35 @@ const ManageMyItems = () => {
   const [loading, setLoading] = useState(true);
   const [selectedItem, setSelectedItem] = useState(null);
 
+  const axiosSecure = useAxiosSecure();
+
   // Fetch user-specific items
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:5000/myItems?email=${user.email}`)
-        .then((res) => res.json())
-        .then((data) => {
-          setMyItems(data);
-          setLoading(false);
-        })
-        .catch((err) => console.error(err));
+      setLoading(true);
+
+      // normal fetch---->
+      // fetch(`https://assignment-11-server-raufur-web-10-0934.vercel.app/myItems?email=${user.email}`)
+      //   .then((res) => res.json())
+      //   .then((data) => {
+      //     setMyItems(data);
+      //     setLoading(false);
+      //   })
+      //   .catch((err) => console.error(err));
+
+      // using axios without hooks
+      // axios
+      //   .get(`https://assignment-11-server-raufur-web-10-0934.vercel.app/myItems?email=${user.email}`, {
+      //     withCredentials: true,
+      //   })
+      //   .then((res) => setMyItems(res.data))
+      //   .finally(() => setLoading(false));
+
+      // axios with hooks
+      axiosSecure
+        .get(`/myItems?email=${user.email}`)
+        .then((res) => setMyItems(res.data))
+        .finally(() => setLoading(false));
     }
   }, [user?.email]);
 
@@ -37,9 +58,12 @@ const ManageMyItems = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/items/${id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://assignment-11-server-raufur-web-10-0934.vercel.app/items/${id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
@@ -60,11 +84,14 @@ const ManageMyItems = () => {
   };
 
   const handleSaveUpdate = (updatedData) => {
-    fetch(`http://localhost:5000/items/${selectedItem._id}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(updatedData),
-    })
+    fetch(
+      `https://assignment-11-server-raufur-web-10-0934.vercel.app/items/${selectedItem._id}`,
+      {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(updatedData),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {

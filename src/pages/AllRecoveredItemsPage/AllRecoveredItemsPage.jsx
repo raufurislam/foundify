@@ -11,7 +11,9 @@ const AllRecoveredItemsPage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/recoveredItems?email=${user.email}`)
+    fetch(
+      `https://assignment-11-server-raufur-web-10-0934.vercel.app/recoveredItems?email=${user.email}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setRecoveredItems(data);

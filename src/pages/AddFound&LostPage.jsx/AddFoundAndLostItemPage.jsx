@@ -23,7 +23,7 @@ const AddFoundAndLostItemPage = () => {
     // Add formatted date to the form data
     formDataObject.date = formattedDate;
 
-    fetch("http://localhost:5000/items", {
+    fetch("https://assignment-11-server-raufur-web-10-0934.vercel.app/items", {
       method: "POST",
       headers: {
         "content-type": "application/json",

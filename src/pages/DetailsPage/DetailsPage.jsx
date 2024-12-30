@@ -20,7 +20,9 @@ const DetailsPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false); // Modal state
 
   useEffect(() => {
-    fetch(`http://localhost:5000/items/${id}`)
+    fetch(
+      `https://assignment-11-server-raufur-web-10-0934.vercel.app/items/${id}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setItem(data);
@@ -55,11 +57,14 @@ const DetailsPage = () => {
       },
     };
 
-    fetch(`http://localhost:5000/recoverItem`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(recoveredData),
-    })
+    fetch(
+      `https://assignment-11-server-raufur-web-10-0934.vercel.app/recoverItem`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(recoveredData),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {

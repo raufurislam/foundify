@@ -1,6 +1,8 @@
 import React from "react";
 import Banner from "./Banner";
 import LatestLostAndFound from "./LatestLostAndFound";
+import HowItWorks from "./HowItWorks";
+import GetMoreUpdates from "./GetMoreUpdates";
 
 const Home = () => {
   return (
@@ -12,7 +14,10 @@ const Home = () => {
         <LatestLostAndFound></LatestLostAndFound>
       </div>
       <div>
-        <LatestLostAndFound></LatestLostAndFound>
+        <HowItWorks></HowItWorks>
+      </div>
+      <div>
+        <GetMoreUpdates></GetMoreUpdates>
       </div>
     </div>
   );

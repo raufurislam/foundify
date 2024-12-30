@@ -19,7 +19,9 @@ const AllItem = () => {
       query = "?status=not_recovered";
     }
 
-    fetch(`http://localhost:5000/items${query}`)
+    fetch(
+      `https://assignment-11-server-raufur-web-10-0934.vercel.app/items${query}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setItems(
