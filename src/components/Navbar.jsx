@@ -42,6 +42,33 @@ const Navbar = () => {
         Lost & Found Items
       </NavLink>
 
+      {/* ................................. */}
+      <NavLink
+        to="/addItem"
+        className={({ isActive }) =>
+          isActive ? "text-blue-500 font-medium" : "text-gray-500 font-medium"
+        }
+      >
+        Add Lost And Found
+      </NavLink>
+      <NavLink
+        to="/allRecover"
+        className={({ isActive }) =>
+          isActive ? "text-blue-500 font-medium" : "text-gray-500 font-medium"
+        }
+      >
+        All Recovered Item
+      </NavLink>
+      <NavLink
+        to="/myItems"
+        className={({ isActive }) =>
+          isActive ? "text-blue-500 font-medium" : "text-gray-500 font-medium"
+        }
+      >
+        Manage My Item
+      </NavLink>
+      {/* ................................. */}
+
       {user && user.email ? (
         <button
           onClick={() => {

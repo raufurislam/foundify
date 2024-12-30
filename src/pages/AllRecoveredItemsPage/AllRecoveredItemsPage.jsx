@@ -3,6 +3,7 @@ import { AuthContext } from "../../provider/AuthProviders";
 import recoverEmpty from "../../assets/lottie/recover_empty.json";
 import Lottie from "lottie-react";
 import { Link } from "react-router-dom";
+import Loading from "../loading/Loading";
 
 const AllRecoveredItemsPage = () => {
   const { user } = useContext(AuthContext);
@@ -18,9 +19,7 @@ const AllRecoveredItemsPage = () => {
       });
   }, [user.email]);
 
-  if (loading) {
-    return <div className="text-center">Loading...</div>;
-  }
+  if (loading) return <Loading></Loading>;
 
   return (
     <div className="max-w-screen-xl mx-auto lg:px-2 px-4">

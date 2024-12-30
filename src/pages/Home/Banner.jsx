@@ -4,42 +4,38 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Typewriter } from "react-simple-typewriter";
+import "animate.css";
 import { Link } from "react-router-dom";
 
 const Banner = () => {
   const [slides] = useState([
     {
       id: 1,
-      title: "Empower Dreams, One Contribution at a Time",
+      title: "Find What You’ve Lost, Return What You’ve Found.",
       description:
-        "Join us in transforming lives by contributing to meaningful campaigns. Every small step leads to a big change.",
-      image:
-        "https://i.ibb.co/WK59yTp/sad-tiny-man-sitting-on-huge-lightbulb-flat-vector-illustration-Converted-01.png",
+        "Connect with your community to reunite lost items with their rightful owners. Together, let’s make a difference.",
+      image: "https://i.ibb.co.com/XD142xk/Foundify-Banner-09.png",
     },
     {
       id: 2,
-      title: "Support Community Growth",
+      title: "Lost Something? We’ll Help You Find It!",
       description:
-        "Help grassroots projects thrive and create a lasting impact. Together, we can make a difference.",
-      image:
-        "https://i.ibb.co/qg1wZjn/sad-tiny-man-sitting-on-huge-lightbulb-flat-vector-illustration-Converted-02.png",
+        "Easily report lost items and search for found items in your area. Let’s bring your belongings back home.",
+      image: "https://i.ibb.co/hZSkjfK/Foundify-Banner-07.png",
     },
     {
       id: 3,
-      title: "Your Contribution Matters",
+      title: "Bringing Communities Together, One Item at a Time",
       description:
-        "Each donation brings us closer to achieving the goals of countless individuals and organizations.",
-      image:
-        "https://i.ibb.co/WzwsYyC/sad-tiny-man-sitting-on-huge-lightbulb-flat-vector-illustration-Converted-03.png",
+        "Join a network of people dedicated to helping others recover lost belongings and create trust.",
+      image: "https://i.ibb.co/qYGRFfC/Foundify-Banner-08.png",
     },
     {
       id: 4,
-      title: "Join the Movement for Change",
+      title: "Your Partner in Finding the Missing Pieces",
       description:
-        "Be a part of something greater. Explore campaigns that align with your values and aspirations.",
-      image:
-        "https://i.ibb.co/WK0mBVW/sad-tiny-man-sitting-on-huge-lightbulb-flat-vector-illustration-Converted-04.png",
+        "Whether you’ve lost something or found an item, our platform makes it simple to connect and resolve.",
+      image: "https://i.ibb.co/7vqNdwZ/Foundify-Banner-06.png",
     },
   ]);
 
@@ -47,7 +43,7 @@ const Banner = () => {
 
   return (
     <div className="max-w-screen-xl mx-auto pt-4 lg:px-2 px-4">
-      <div className="rounded-lg">
+      <div className="rounded-lg bg-base-200 lg:px-12 px-4 md:px-7 py-5">
         <Swiper
           loop={true}
           spaceBetween={30}
@@ -68,23 +64,20 @@ const Banner = () => {
             <SwiperSlide key={slide.id}>
               <div className="flex flex-col-reverse md:flex-row gap-8 items-center">
                 {/* Text Content */}
-                <div className="flex-1">
-                  <h1 className="lg:text-4xl text-secondary md:text-3xl text-2xl mb-3 font-semibold">
-                    {activeIndex === index && (
-                      <Typewriter
-                        words={[slide.title]}
-                        loop={1}
-                        cursorStyle="|"
-                        typeSpeed={30}
-                        deleteSpeed={10}
-                        delaySpeed={3000}
-                      />
-                    )}
+                <div
+                  className={`flex-1 ${
+                    activeIndex === index
+                      ? "animate__animated animate__fadeIn"
+                      : "opacity-0"
+                  }`}
+                >
+                  <h1 className="lg:text-4xl md:text-3xl text-2xl mb-3 font-semibold">
+                    {slide.title}
                   </h1>
-                  <p className="lg:w-2/3 text-sm text-accent">
+                  <p className="lg:w-2/3 text-sm text-gray-500">
                     {slide.description}
                   </p>
-                  <Link className="btn bg-primary text-neutral mt-8 w-full md:w-auto">
+                  <Link className="btn btn-neutral mt-8 w-full md:w-auto">
                     Donate Now
                   </Link>
                 </div>

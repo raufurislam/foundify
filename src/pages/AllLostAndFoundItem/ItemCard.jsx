@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const ItemCard = ({ item }) => {
-  const { _id, title, thumbnail, location, postType, date } = item;
+  const { _id, title, thumbnail, location, postType, date, status } = item;
 
   return (
     <div className="rounded-xl pb-5 shadow-lg bg-base-200 lg:hover:scale-105 transition duration-300">
@@ -31,13 +31,23 @@ const ItemCard = ({ item }) => {
           <span className="font-semibold">Date:</span> {date}
         </p>
 
-        {/* View Details Button */}
-        <Link
-          to={`/item/${_id}`}
-          className="inline-block text-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
-        >
-          View Details
-        </Link>
+        {/* Action Buttons */}
+        <div className="flex gap-2">
+          <Link
+            to={`/item/${_id}`}
+            className="inline-block text-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
+          >
+            View Details
+          </Link>
+          {status === "recovered" ? (
+            <button
+              disabled
+              className="inline-block text-center px-4 py-2 bg-green-500 text-white rounded-md cursor-not-allowed"
+            >
+              Recovered
+            </button>
+          ) : null}
+        </div>
       </div>
     </div>
   );
