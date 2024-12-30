@@ -3,6 +3,7 @@ import Banner from "./Banner";
 import LatestLostAndFound from "./LatestLostAndFound";
 import HowItWorks from "./HowItWorks";
 import GetMoreUpdates from "./GetMoreUpdates";
+import Faq from "./Faq";
 
 const Home = () => {
   return (
@@ -18,6 +19,9 @@ const Home = () => {
       </div>
       <div>
         <GetMoreUpdates></GetMoreUpdates>
+      </div>
+      <div>
+        <Faq></Faq>
       </div>
     </div>
   );
