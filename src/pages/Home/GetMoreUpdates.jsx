@@ -3,10 +3,10 @@ import { FaEnvelope, FaBell } from "react-icons/fa";
 
 const GetMoreUpdates = () => {
   return (
-    <section className="max-w-screen-xl mx-auto py-16 bg-base-200">
-      <div className="container mx-auto px-4">
+    <section className="max-w-screen-xl mx-auto lg:px-2 px-4 ">
+      <div className="container mx-auto lg:px-2 px-4 bg-base-200 rounded-xl py-10">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-800">
+          <h2 className="lg:text-3xl md:text-2xl text-xl font-bold">
             Stay Updated with the Latest News
           </h2>
           <p className="text-gray-600 mt-4">

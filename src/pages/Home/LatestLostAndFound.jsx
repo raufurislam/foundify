@@ -39,12 +39,12 @@ const LatestLostAndFound = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
       transition={{ duration: 0.5 }}
-      className="my-8 max-w-screen-xl mx-auto"
+      className="max-w-screen-xl mx-auto"
     >
-      <h1 className="text-3xl font-semibold text-center mb-6">
+      <h1 className="lg:text-3xl md:text-2xl text-xl font-bold text-center mb-6">
         Latest Find & Lost Items
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:px-2 px-4">
         {items.map((item) => (
           <ItemCard key={item._id} item={item} />
         ))}

@@ -3,6 +3,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { AuthContext } from "../../provider/AuthProviders";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const AddFoundAndLostItemPage = () => {
   const { user } = useContext(AuthContext); // Get logged-in user data
@@ -15,6 +16,7 @@ const AddFoundAndLostItemPage = () => {
     const formDataObject = Object.fromEntries(formData.entries());
     formDataObject.contactName = user?.displayName || "Anonymous";
     formDataObject.contactEmail = user?.email || "N/A";
+    const navigate = useNavigate();
 
     // Adjust date to GMT+6 and format to YYYY-MM-DD
     const adjustedDate = new Date(date.getTime() + 6 * 60 * 60 * 1000); // Add 6 hours for GMT+6
@@ -42,6 +44,7 @@ const AddFoundAndLostItemPage = () => {
             timer: 1500,
           });
           form.reset(); // Reset the form fields
+          navigate("/myItems");
           setDate(new Date()); // Reset the date picker
         } else {
           Swal.fire({
@@ -68,12 +71,12 @@ const AddFoundAndLostItemPage = () => {
   return (
     <div className="max-w-screen-xl mx-auto lg:px-2 px-4">
       <div className="bg-base-200 py-16 rounded-xl">
-        <h1 className="text-center text-4xl font-semibold">
+        <h1 className="text-center lg:text-4xl md:text-3xl text-2xl font-bold">
           Add Lost And Found Section
         </h1>
       </div>
       <div className="max-w-screen-xl my-4 py-8 rounded-xl">
-        <h1 className="text-3xl font-bold mb-6 w-2/5">
+        <h1 className="lg:text-3xl md:text-2xl text-xl font-bold mb-6 lg:w-2/5">
           Let’s work together to bring peace of mind to those who’ve lost
           something special.
         </h1>

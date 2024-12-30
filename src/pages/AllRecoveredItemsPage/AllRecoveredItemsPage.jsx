@@ -26,7 +26,7 @@ const AllRecoveredItemsPage = () => {
   return (
     <div className="max-w-screen-xl mx-auto lg:px-2 px-4">
       <div className="bg-base-200 py-16 rounded-xl">
-        <h1 className="text-center text-4xl font-semibold">
+        <h1 className="text-center lg:text-4xl md:text-3xl text-2xl font-bold">
           All Recovered Items
         </h1>
       </div>

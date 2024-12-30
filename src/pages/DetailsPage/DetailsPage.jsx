@@ -78,25 +78,26 @@ const DetailsPage = () => {
   };
 
   return (
-    <div className="max-w-screen-xl mx-auto lg:px-2 px-4">
-      <div className="grid grid-cols-1 md:grid-cols-2 mx-auto gap-5">
+    <div className="max-w-screen-xl mx-auto lg:px-2 px-4 mt-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 items-center mx-auto gap-5">
         <div>
           <img className="rounded-xl" src={item.thumbnail} alt={item.title} />
         </div>
         <div>
-          <h1 className="text-3xl font-bold">{item.title}</h1>
-          <p>{item.description}</p>
-          <p>
+          <h1 className="text-3xl font-bold mb-3">{item.title}</h1>
+          <p className="mb-4">{item.description}</p>
+          <p className="mb-2">
             <strong>Post Type:</strong> {item.postType}
           </p>
           <p>
-            <strong>Status:</strong> {item.status}
+            <strong>Status:</strong>{" "}
+            {item.status === "recovered" ? "Recovered" : "Not Recovered"}
           </p>
 
           {item.status !== "recovered" && (
             <div>
               <button
-                className="btn btn-primary"
+                className="btn btn-primary mr-3"
                 onClick={() => setIsModalOpen(true)}
               >
                 {item.postType === "Lost" ? "Found This!" : "This is Mine!"}

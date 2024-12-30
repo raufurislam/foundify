@@ -70,13 +70,6 @@ const router = createBrowserRouter([
         // <h1>Manage My Item</h1>,
       },
 
-      // // Update Item
-      // {
-      //   path: "/updateItems/:id",
-      //   element: <h1>Updated page</h1>,
-      //   // <h1>Manage My Item</h1>,
-      // },
-
       // Auth Page
       {
         path: "/auth",

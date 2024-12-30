@@ -7,7 +7,7 @@ import Faq from "./Faq";
 
 const Home = () => {
   return (
-    <div>
+    <div className="lg:space-y-20 space-y-12">
       <div>
         <Banner></Banner>
       </div>

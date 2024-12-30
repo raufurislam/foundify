@@ -116,7 +116,9 @@ const ManageMyItems = () => {
       </div> */}
       {/* ....................................... */}
       <div className="bg-base-200 py-16 rounded-xl">
-        <h1 className="text-center text-4xl font-semibold">Manage My Items</h1>
+        <h1 className="text-center lg:text-4xl md:text-3xl text-2xl font-bold">
+          Manage My Items
+        </h1>
       </div>
       {myItems.length === 0 ? (
         <div className="max-w-screen-lg mx-auto text-center grid grid-cols-1 md:grid-cols-2 mt-12 items-center justify-between gap-5">
@@ -189,10 +191,7 @@ const ManageMyItems = () => {
           {/* Mobile Version */}
           <div className="block md:hidden space-y-4">
             {myItems.map((item, index) => (
-              <div
-                key={item._id}
-                className="bg-base-300 shadow-md rounded-lg p-4"
-              >
+              <div key={item._id} className="bg-base-200 shadow-md rounded-lg">
                 <div className="mb-2">
                   <img
                     src={item.thumbnail}
@@ -200,32 +199,36 @@ const ManageMyItems = () => {
                     className="w-full h-44 object-cover rounded-lg"
                   />
                 </div>
-                <div className="mt-4 mb-2 font-bold text-xl">#{index + 1}</div>
-                <div className="mb-2">
-                  <span className="font-bold">Title:</span> {item.title}
-                </div>
-                <div className="mb-2">
-                  <span className="font-bold">Type:</span> {item.postType}
-                </div>
-                <div className="mb-2">
-                  <span className="font-bold">Category:</span> {item.category}
-                </div>
-                <div className="mb-2">
-                  <span className="font-bold">Location:</span> {item.location}
-                </div>
-                <div className="flex flex-col gap-2 mt-4">
-                  <button
-                    className="btn btn-sm btn-primary"
-                    onClick={() => handleUpdate(item._id)}
-                  >
-                    Update
-                  </button>
-                  <button
-                    className="btn btn-sm btn-error"
-                    onClick={() => handleDelete(item._id)}
-                  >
-                    Delete
-                  </button>
+                <div className="px-5 pb-5">
+                  <div className="mt-4 mb-2 font-bold text-xl">
+                    #{index + 1}
+                  </div>
+                  <div className="mb-2">
+                    <span className="font-bold">Title:</span> {item.title}
+                  </div>
+                  <div className="mb-2">
+                    <span className="font-bold">Type:</span> {item.postType}
+                  </div>
+                  <div className="mb-2">
+                    <span className="font-bold">Category:</span> {item.category}
+                  </div>
+                  <div className="mb-2">
+                    <span className="font-bold">Location:</span> {item.location}
+                  </div>
+                  <div className="flex flex-col gap-2 mt-4">
+                    <button
+                      className="btn btn-sm btn-primary"
+                      onClick={() => handleUpdate(item._id)}
+                    >
+                      Update
+                    </button>
+                    <button
+                      className="btn btn-sm btn-error"
+                      onClick={() => handleDelete(item._id)}
+                    >
+                      Delete
+                    </button>
+                  </div>
                 </div>
               </div>
             ))}

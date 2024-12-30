@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProviders";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -16,9 +17,24 @@ const Navbar = () => {
   }, [location.pathname]);
 
   const handleLogout = () => {
-    if (window.confirm("Are you sure you want to log out?")) {
-      logOut();
-    }
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You will be logged out of your account.",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, log out!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        logOut();
+        Swal.fire(
+          "Logged Out!",
+          "You have been successfully logged out.",
+          "success"
+        );
+      }
+    });
   };
 
   const links = (
@@ -41,33 +57,6 @@ const Navbar = () => {
       >
         Lost & Found Items
       </NavLink>
-
-      {/* ................................. */}
-      <NavLink
-        to="/addItem"
-        className={({ isActive }) =>
-          isActive ? "text-blue-500 font-medium" : "text-gray-500 font-medium"
-        }
-      >
-        Add Lost And Found
-      </NavLink>
-      <NavLink
-        to="/allRecover"
-        className={({ isActive }) =>
-          isActive ? "text-blue-500 font-medium" : "text-gray-500 font-medium"
-        }
-      >
-        All Recovered Item
-      </NavLink>
-      <NavLink
-        to="/myItems"
-        className={({ isActive }) =>
-          isActive ? "text-blue-500 font-medium" : "text-gray-500 font-medium"
-        }
-      >
-        Manage My Item
-      </NavLink>
-      {/* ................................. */}
 
       {user && user.email ? (
         <button
@@ -149,7 +138,7 @@ const Navbar = () => {
           {mobileMenuVisible && (
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-44 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-44 p-2 shadow z-50"
             >
               {links}
             </ul>
@@ -206,7 +195,7 @@ const Navbar = () => {
 
         {/* Dropdown */}
         {dropdownVisible && (
-          <div className="absolute right-16 top-12 mt-2 bg-white shadow-md rounded p-2 z-20 w-52">
+          <div className="absolute lg:right-16 md:right-24 right-4 md:top-12 top-10 mt-2 bg-white shadow-md rounded p-2 z-20 w-52">
             {profileLinks}
           </div>
         )}

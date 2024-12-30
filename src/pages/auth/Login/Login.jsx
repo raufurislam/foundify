@@ -32,7 +32,7 @@ const Login = () => {
     userLoginGoogle()
       .then((result) => {
         setUser(result.user);
-        console.log(result);
+        // console.log(result);
         navigate(location?.state || "/");
         toast.success("Account Login successfully!");
       })

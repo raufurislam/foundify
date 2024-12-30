@@ -71,14 +71,17 @@ const Banner = () => {
                       : "opacity-0"
                   }`}
                 >
-                  <h1 className="lg:text-4xl md:text-3xl text-2xl mb-3 font-semibold">
+                  <h1 className="lg:text-4xl md:text-3xl text-2xl mb-3 font-bold">
                     {slide.title}
                   </h1>
                   <p className="lg:w-2/3 text-sm text-gray-500">
                     {slide.description}
                   </p>
-                  <Link className="btn btn-neutral mt-8 w-full md:w-auto">
-                    Donate Now
+                  <Link
+                    to="/allItem"
+                    className="btn btn-neutral mt-8 w-full md:w-auto"
+                  >
+                    Explore Now
                   </Link>
                 </div>
                 {/* Image */}
