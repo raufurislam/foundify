@@ -1,10 +1,10 @@
-# WhereIsIt
+# <img src="https://i.ibb.co.com/H46zND8/foundify-05.png" alt="Crowdcube Icon" width="28" height="28"> Foundify
 
 A comprehensive platform designed to assist users in reporting and recovering lost items, as well as finding and returning found items. The application offers user authentication, a robust database for item records, and a responsive, intuitive interface to facilitate ease of use.
 
-## Live Website
+## 🚀 **Live Demo**
 
-[Visit WhereIsIt Live](#)
+Check out the live site: [https://foundify-raufur-a11.web.app](https://foundify-raufur-a11.web.app/)
 
 ## Purpose
 
