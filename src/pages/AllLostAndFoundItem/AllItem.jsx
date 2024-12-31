@@ -67,7 +67,7 @@ const AllItem = () => {
       {/* Search and Filters */}
       <div className="overflow-x-auto flex flex-col md:flex-row justify-center items-center gap-5 mt-4 px-4">
         <div>
-          <label className="mx-auto input input-bordered flex items-center gap-2 md:w-full w-[340px]">
+          <label className="mx-auto input input-bordered flex items-center gap-2 w-full ">
             <input
               type="text"
               className="grow"
