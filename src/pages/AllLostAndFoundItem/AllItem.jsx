@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import ItemCard from "./ItemCard";
 import Loading from "../loading/Loading";
-import { IoCheckmark } from "react-icons/io5";
-import { IoClose } from "react-icons/io5";
+import { Helmet } from "react-helmet-async";
 
 const AllItem = () => {
   const [items, setItems] = useState([]);
@@ -56,6 +55,9 @@ const AllItem = () => {
 
   return (
     <div className="max-w-screen-xl mx-auto lg:px-2 px-4">
+      <Helmet>
+        <title>All Item - Foundify</title>
+      </Helmet>
       <div className="bg-base-200 py-16 rounded-xl">
         <h1 className="text-center lg:text-4xl md:text-3xl text-2xl font-bold">
           All Lost and Found Items

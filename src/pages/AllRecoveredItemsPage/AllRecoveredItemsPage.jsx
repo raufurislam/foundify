@@ -5,6 +5,7 @@ import Lottie from "lottie-react";
 import { Link } from "react-router-dom";
 import Loading from "../loading/Loading";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
+import { Helmet } from "react-helmet-async";
 
 const AllRecoveredItemsPage = () => {
   const { user } = useContext(AuthContext);
@@ -25,6 +26,9 @@ const AllRecoveredItemsPage = () => {
 
   return (
     <div className="max-w-screen-xl mx-auto lg:px-2 px-4">
+      <Helmet>
+        <title>All Recovered - Foundify</title>
+      </Helmet>
       <div className="bg-base-200 py-16 rounded-xl">
         <h1 className="text-center lg:text-4xl md:text-3xl text-2xl font-bold">
           All Recovered Items

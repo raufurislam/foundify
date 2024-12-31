@@ -6,6 +6,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { AuthContext } from "../../provider/AuthProviders";
 import Loading from "../loading/Loading";
 import { IoArrowBack } from "react-icons/io5";
+import { Helmet } from "react-helmet-async";
 
 const DetailsPage = () => {
   const { id } = useParams(); // Item ID from URL
@@ -79,6 +80,9 @@ const DetailsPage = () => {
 
   return (
     <div className="max-w-screen-xl mx-auto lg:px-2 px-4 mt-6">
+      <Helmet>
+        <title>{item.title} - Foundify</title>
+      </Helmet>
       <div className="grid grid-cols-1 md:grid-cols-2 items-center mx-auto gap-5">
         <div>
           <img className="rounded-xl" src={item.thumbnail} alt={item.title} />

@@ -4,6 +4,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { AuthContext } from "../../provider/AuthProviders";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const AddFoundAndLostItemPage = () => {
   const { user } = useContext(AuthContext); // Get logged-in user data
@@ -70,6 +71,9 @@ const AddFoundAndLostItemPage = () => {
 
   return (
     <div className="max-w-screen-xl mx-auto lg:px-2 px-4">
+      <Helmet>
+        <title>Add Item - Foundify</title>
+      </Helmet>
       <div className="bg-base-200 py-16 rounded-xl">
         <h1 className="text-center lg:text-4xl md:text-3xl text-2xl font-bold">
           Add Lost And Found Section
