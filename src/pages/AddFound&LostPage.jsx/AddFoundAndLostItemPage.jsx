@@ -9,6 +9,7 @@ import { Helmet } from "react-helmet-async";
 const AddFoundAndLostItemPage = () => {
   const { user } = useContext(AuthContext); // Get logged-in user data
   const [date, setDate] = useState(new Date()); // Manage date input
+  const navigate = useNavigate(); // Moved to top level
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,7 +18,6 @@ const AddFoundAndLostItemPage = () => {
     const formDataObject = Object.fromEntries(formData.entries());
     formDataObject.contactName = user?.displayName || "Anonymous";
     formDataObject.contactEmail = user?.email || "N/A";
-    const navigate = useNavigate();
 
     // Adjust date to GMT+6 and format to YYYY-MM-DD
     const adjustedDate = new Date(date.getTime() + 6 * 60 * 60 * 1000); // Add 6 hours for GMT+6
@@ -45,8 +45,8 @@ const AddFoundAndLostItemPage = () => {
             timer: 1500,
           });
           form.reset(); // Reset the form fields
-          navigate("/myItems");
           setDate(new Date()); // Reset the date picker
+          navigate("/myItems"); // Navigate after success
         } else {
           Swal.fire({
             position: "top-center",
