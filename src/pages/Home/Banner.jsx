@@ -14,7 +14,7 @@ const Banner = () => {
       title: "Find What You’ve Lost, Return What You’ve Found.",
       description:
         "Connect with your community to reunite lost items with their rightful owners. Together, let’s make a difference.",
-      image: "https://i.ibb.co.com/XD142xk/Foundify-Banner-09.png",
+      image: "https://i.ibb.co.com/nsBgz0d/Foundify-Banner-09-09.png",
     },
     {
       id: 2,

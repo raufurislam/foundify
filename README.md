@@ -1,5 +1,9 @@
 # <img src="https://i.ibb.co.com/H46zND8/foundify-05.png" alt="Crowdcube Icon" width="28" height="28"> Foundify
 
+<div align="center">
+  <img height="auto" width="100%" src="https://i.ibb.co.com/KjSyH63s/Screenshot-205.png" />
+</div>
+
 A comprehensive platform designed to assist users in reporting and recovering lost items, as well as finding and returning found items. The application offers user authentication, a robust database for item records, and a responsive, intuitive interface to facilitate ease of use.
 
 ## 🚀 **Live Demo**
@@ -47,6 +51,32 @@ The purpose of this project is to create a centralized platform where users can:
 - **Dotenv:** For environment variable management.
 - **Cors:** To handle cross-origin requests.
 - **Body-Parser:** For parsing incoming request bodies.
+
+## Dependencies
+
+### Frontend:
+
+- **React**: A JavaScript library for building user interfaces.
+- **Tailwind CSS**: A utility-first CSS framework for designing responsive layouts.
+- **DaisyUI**: A Tailwind CSS plugin for UI components.
+- **Framer Motion**: A library for animations and interactive transitions.
+- **React Router DOM**: A routing library for seamless navigation between pages.
+- **React Icons**: A library to include icons in your React app.
+- **SweetAlert2**: For elegant and customizable alert dialogs.
+- **Axios**: A promise-based HTTP client for making requests.
+
+### Backend:
+
+- **Node.js**: JavaScript runtime environment.
+- **Express.js**: Web framework for Node.js to build server-side applications.
+- **MongoDB**: A NoSQL database for storing application data.
+- **Firebase Authentication**: For user authentication (email/password and third-party providers like Google and GitHub).
+
+### Development Tools:
+
+- **Dotenv**: Loads environment variables from a `.env` file.
+- **Cors**: A package to handle cross-origin resource sharing.
+- **Body-Parser**: Middleware to parse incoming request bodies.
 
 ## How to Run Locally
 

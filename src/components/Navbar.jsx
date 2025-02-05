@@ -64,6 +64,7 @@ const Navbar = () => {
             handleLogout();
             setMobileMenuVisible(false); // Close mobile menu
           }}
+          
           className="md:hidden text-left"
         >
           Logout
