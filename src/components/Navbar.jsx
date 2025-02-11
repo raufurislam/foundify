@@ -42,7 +42,9 @@
 //       <NavLink
 //         to="/"
 //         className={({ isActive }) =>
-//           isActive ? "text-blue-500 font-medium" : "text-gray-500 font-medium"
+//           isActive
+//             ? "text-blue-500 font-medium underline-offset-4 underline lg:no-underline lg:border-blue-500 lg:border-b-2"
+//             : "text-slate-700 hover:text-blue-700 font-medium"
 //         }
 //         onClick={() => setMobileMenuVisible(false)} // Close mobile menu
 //       >
@@ -51,7 +53,9 @@
 //       <NavLink
 //         to="/allItem"
 //         className={({ isActive }) =>
-//           isActive ? "text-blue-500 font-medium" : "text-gray-500 font-medium"
+//           isActive
+//             ? "text-blue-500 font-medium underline-offset-4 underline lg:no-underline lg:border-blue-500 lg:border-b-2"
+//             : "text-slate-700 hover:text-blue-700 font-medium"
 //         }
 //         onClick={() => setMobileMenuVisible(false)} // Close mobile menu
 //       >
@@ -59,7 +63,11 @@
 //       </NavLink>
 //       <NavLink
 //         to="/terms"
-//         className="text-gray-500 font-medium"
+//         className={({ isActive }) =>
+//           isActive
+//             ? "text-blue-500 font-medium underline-offset-4 underline lg:no-underline lg:border-blue-500 lg:border-b-2"
+//             : "text-slate-700 hover:text-blue-700 font-medium"
+//         }
 //         onClick={() => setMobileMenuVisible(false)} // Close mobile menu
 //       >
 //         terms
@@ -67,7 +75,9 @@
 //       <NavLink
 //         to="/about"
 //         className={({ isActive }) =>
-//           isActive ? "text-blue-500 font-medium" : "text-gray-500 font-medium"
+//           isActive
+//             ? "text-blue-500 font-medium underline-offset-4 underline lg:no-underline lg:border-blue-500 lg:border-b-2"
+//             : "text-slate-700 hover:text-blue-700 font-medium"
 //         }
 //         onClick={() => setMobileMenuVisible(false)} // Close mobile menu
 //       >
@@ -76,14 +86,16 @@
 //       <NavLink
 //         to="/contact"
 //         className={({ isActive }) =>
-//           isActive ? "text-blue-500 font-medium" : "text-gray-500 font-medium"
+//           isActive
+//             ? "text-blue-500 font-medium underline-offset-4 underline lg:no-underline lg:border-blue-500 lg:border-b-2"
+//             : "text-slate-700 hover:text-blue-700 font-medium"
 //         }
 //         onClick={() => setMobileMenuVisible(false)} // Close mobile menu
 //       >
 //         Contact us
 //       </NavLink>
 
-//       {user && user.email ? (
+//       {/* {user && user.email ? (
 //         <button
 //           onClick={() => {
 //             handleLogout();
@@ -101,12 +113,12 @@
 //         >
 //           Login
 //         </Link>
-//       )}
+//       )} */}
 //     </div>
 //   );
 
 //   const profileLinks = (
-//     <div className="flex flex-col text-right gap-3 px-5 py-2">
+//     <div className="flex flex-col text-left gap-3 px-5 py-2">
 //       <NavLink
 //         to="/addItem"
 //         className={({ isActive }) =>
@@ -131,18 +143,25 @@
 //       >
 //         Manage My Item
 //       </NavLink>
+//       {/* Logout Button (only when logged in) */}
+//       <button
+//         onClick={handleLogout}
+//         className="text-gray-500 font-medium text-left"
+//       >
+//         Logout{" "}
+//       </button>
 //     </div>
 //   );
 
 //   return (
-//     <div className="fixed top-0 w-full z-50 bg-white/50 shadow-sm backdrop-blur-md transition-all duration-300">
-//       <div className="max-w-screen-xl mx-auto navbar">
+//     <div className="fixed top-0 w-full z-50 bg-white/60 shadow-sm backdrop-blur-md transition-all duration-300">
+//       <div className="max-w-screen-xl mx-auto navbar lg:px-2 px-4">
 //         {/* Navbar Start */}
 //         <div className="navbar-start">
 //           <div className="dropdown">
 //             <button
 //               tabIndex={0}
-//               className="btn btn-ghost lg:hidden"
+//               className="btn btn-ghost pl-0 lg:hidden"
 //               onClick={() => setMobileMenuVisible(!mobileMenuVisible)}
 //             >
 //               <svg
@@ -186,59 +205,60 @@
 //         </div>
 
 //         {/* Navbar End */}
-//         <div className="navbar-end relative">
-//           <div
-//             className="tooltip tooltip-left mr-5"
-//             data-tip={user?.displayName || "User"}
-//           >
-//             <div
-//               className="bg-base-200 rounded-full w-8 h-8 md:w-11 md:h-11 flex items-center justify-center cursor-pointer relative"
-//               onClick={() => setDropdownVisible(!dropdownVisible)}
-//             >
-//               {user && user.photoURL ? (
-//                 <img
-//                   src={user.photoURL}
-//                   alt="Profile"
-//                   className="object-cover rounded-full"
-//                 />
-//               ) : (
-//                 <img
-//                   src="https://img.icons8.com/?size=80&id=ARWy_JjgohtA&format=png"
-//                   alt="Default Avatar"
-//                   className="w-5"
-//                 />
+//         {/* Navbar End */}
+//         <div className="navbar-end flex items-center ml-auto pr-0 relative">
+//           {user && user.email ? ( // Only show profile section when user is logged in
+//             <>
+//               {/* Profile Avatar + Dropdown Toggle */}
+//               <div
+//                 className="tooltip tooltip-left mr-2"
+//                 data-tip={user?.displayName || "User"}
+//               >
+//                 <div
+//                   className="bg-base-200 rounded-full w-8 h-8 md:w-11 md:h-11 flex items-center justify-center cursor-pointer relative"
+//                   onClick={() => setDropdownVisible(!dropdownVisible)}
+//                 >
+//                   {user.photoURL ? (
+//                     <img
+//                       src={user.photoURL}
+//                       alt="Profile"
+//                       className="object-cover rounded-full w-full h-full"
+//                     />
+//                   ) : (
+//                     <img
+//                       src="https://img.icons8.com/?size=80&id=ARWy_JjgohtA&format=png"
+//                       alt="Default Avatar"
+//                       className="w-5"
+//                     />
+//                   )}
+
+//                   {/* Toggle Arrow */}
+//                   <span className="absolute text-neutral -bottom-2 -right-2 text-xs">
+//                     {dropdownVisible ? (
+//                       <IoIosArrowUp
+//                         size={22}
+//                         className="bg-base-200 border rounded-full"
+//                       />
+//                     ) : (
+//                       <IoIosArrowDown
+//                         size={22}
+//                         className="bg-base-200 rounded-full"
+//                       />
+//                     )}
+//                   </span>
+//                 </div>
+//               </div>
+
+//               {/* Dropdown */}
+//               {dropdownVisible && (
+//                 <div className="absolute right-0 md:top-12 top-10 mt-2 bg-white shadow-md rounded p-2 z-20 w-52">
+//                   {profileLinks}
+//                 </div>
 //               )}
-//               {/* Toggle Arrow */}
-//               <span className="absolute -bottom-2 -right-2 text-xs">
-//                 {dropdownVisible ? (
-//                   <IoIosArrowUp size={22} className="bg-white rounded-full" />
-//                 ) : (
-//                   <IoIosArrowDown size={22} className="bg-white rounded-full" />
-//                 )}
-//               </span>
-//             </div>
-//           </div>
-
-//           {/* Dropdown */}
-//           {dropdownVisible && (
-//             <div className="absolute lg:right-16 md:right-24 right-4 md:top-12 top-10 mt-2 bg-white shadow-md rounded p-2 z-20 w-52">
-//               {profileLinks}
-//             </div>
-//           )}
-
-//           {/* Login/Logout Button */}
-//           {user && user.email ? (
-//             <button
-//               onClick={handleLogout}
-//               className="hidden md:flex btn btn-sm md:btn-md"
-//             >
-//               Logout
-//             </button>
+//             </>
 //           ) : (
-//             <Link
-//               to="/auth/login"
-//               className="hidden md:flex btn btn-sm md:btn-md"
-//             >
+//             // Show Login button if no user is logged in
+//             <Link to="/auth/login" className="btn btn-neutral btn-sm md:btn-md">
 //               Login
 //             </Link>
 //           )}
@@ -259,14 +279,31 @@ import Swal from "sweetalert2";
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [dropdownVisible, setDropdownVisible] = useState(false);
-  const [mobileMenuVisible, setMobileMenuVisible] = useState(false); // For mobile menu
-  const location = useLocation(); // To detect route changes
+  const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
+  const location = useLocation();
 
   // Close dropdowns on route change
   useEffect(() => {
     setDropdownVisible(false);
     setMobileMenuVisible(false);
   }, [location.pathname]);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        dropdownVisible &&
+        !event.target.closest(".profile-dropdown") // Ensures click is outside the dropdown
+      ) {
+        setDropdownVisible(false);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [dropdownVisible]);
 
   const handleLogout = () => {
     Swal.fire({
@@ -348,24 +385,24 @@ const Navbar = () => {
       </NavLink>
 
       {/* {user && user.email ? (
-        <button
-          onClick={() => {
-            handleLogout();
-            setMobileMenuVisible(false); // Close mobile menu
-          }}
-          className="md:hidden text-left"
-        >
-          Logout
-        </button>
-      ) : (
-        <Link
-          to="/auth/login"
-          className="md:hidden"
-          onClick={() => setMobileMenuVisible(false)} // Close mobile menu
-        >
-          Login
-        </Link>
-      )} */}
+            <button
+              onClick={() => {
+                handleLogout();
+                setMobileMenuVisible(false); // Close mobile menu
+              }}
+              className="md:hidden text-left"
+            >
+              Logout
+            </button>
+          ) : (
+            <Link
+              to="/auth/login"
+              className="md:hidden"
+              onClick={() => setMobileMenuVisible(false)} // Close mobile menu
+            >
+              Login
+            </Link>
+          )} */}
     </div>
   );
 
@@ -431,7 +468,6 @@ const Navbar = () => {
                 />
               </svg>
             </button>
-            {/* Mobile version */}
             {mobileMenuVisible && (
               <ul
                 tabIndex={0}
@@ -457,59 +493,45 @@ const Navbar = () => {
         </div>
 
         {/* Navbar End */}
-        {/* Navbar End */}
         <div className="navbar-end flex items-center ml-auto pr-0 relative">
-          {user && user.email ? ( // Only show profile section when user is logged in
-            <>
-              {/* Profile Avatar + Dropdown Toggle */}
+          {user && user.email ? (
+            <div className="profile-dropdown relative">
               <div
-                className="tooltip tooltip-left mr-2"
-                data-tip={user?.displayName || "User"}
+                className="bg-base-200 rounded-full w-8 h-8 md:w-11 md:h-11 flex items-center justify-center cursor-pointer"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setDropdownVisible(!dropdownVisible);
+                }}
               >
-                <div
-                  className="bg-base-200 rounded-full w-8 h-8 md:w-11 md:h-11 flex items-center justify-center cursor-pointer relative"
-                  onClick={() => setDropdownVisible(!dropdownVisible)}
-                >
-                  {user.photoURL ? (
-                    <img
-                      src={user.photoURL}
-                      alt="Profile"
-                      className="object-cover rounded-full w-full h-full"
+                <img
+                  src={
+                    user.photoURL ||
+                    "https://img.icons8.com/?size=80&id=ARWy_JjgohtA&format=png"
+                  }
+                  alt="Profile"
+                  className="object-cover rounded-full w-full h-full"
+                />
+                <span className="absolute text-neutral -bottom-2 -right-2 text-xs">
+                  {dropdownVisible ? (
+                    <IoIosArrowUp
+                      size={22}
+                      className="bg-base-200 border rounded-full"
                     />
                   ) : (
-                    <img
-                      src="https://img.icons8.com/?size=80&id=ARWy_JjgohtA&format=png"
-                      alt="Default Avatar"
-                      className="w-5"
+                    <IoIosArrowDown
+                      size={22}
+                      className="bg-base-200 rounded-full"
                     />
                   )}
-
-                  {/* Toggle Arrow */}
-                  <span className="absolute text-neutral -bottom-2 -right-2 text-xs">
-                    {dropdownVisible ? (
-                      <IoIosArrowUp
-                        size={22}
-                        className="bg-base-200 border rounded-full"
-                      />
-                    ) : (
-                      <IoIosArrowDown
-                        size={22}
-                        className="bg-base-200 rounded-full"
-                      />
-                    )}
-                  </span>
-                </div>
+                </span>
               </div>
-
-              {/* Dropdown */}
               {dropdownVisible && (
                 <div className="absolute right-0 md:top-12 top-10 mt-2 bg-white shadow-md rounded p-2 z-20 w-52">
                   {profileLinks}
                 </div>
               )}
-            </>
+            </div>
           ) : (
-            // Show Login button if no user is logged in
             <Link to="/auth/login" className="btn btn-neutral btn-sm md:btn-md">
               Login
             </Link>
@@ -521,72 +543,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-// {/* <div className="navbar-end relative">
-// {user && user.email ? ( // Only show profile section when user is logged in
-//   <>
-//     {/* Profile Avatar + Dropdown Toggle */}
-//     <div
-//       className="tooltip tooltip-left mr-5"
-//       data-tip={user?.displayName || "User"}
-//     >
-//       <div
-//         className="bg-base-200 rounded-full w-8 h-8 md:w-11 md:h-11 flex items-center justify-center cursor-pointer relative"
-//         onClick={() => setDropdownVisible(!dropdownVisible)}
-//       >
-//         {user.photoURL ? (
-//           <img
-//             src={user.photoURL}
-//             alt="Profile"
-//             className="object-cover rounded-full"
-//           />
-//         ) : (
-//           <img
-//             src="https://img.icons8.com/?size=80&id=ARWy_JjgohtA&format=png"
-//             alt="Default Avatar"
-//             className="w-5"
-//           />
-//         )}
-
-//         {/* Toggle Arrow (only when logged in) */}
-//         <span className="absolute -bottom-2 -right-2 text-xs">
-//           {dropdownVisible ? (
-//             <IoIosArrowUp
-//               size={22}
-//               className="bg-white rounded-full"
-//             />
-//           ) : (
-//             <IoIosArrowDown
-//               size={22}
-//               className="bg-white rounded-full"
-//             />
-//           )}
-//         </span>
-//       </div>
-//     </div>
-
-//     {/* Dropdown (only when logged in) */}
-//     {dropdownVisible && (
-//       <div className="absolute lg:right-16 md:right-24 right-4 md:top-12 top-10 mt-2 bg-white shadow-md rounded p-2 z-20 w-52">
-//         {profileLinks}
-//       </div>
-//     )}
-
-//     {/* Logout Button (only when logged in)
-//     <button
-//       onClick={handleLogout}
-//       className="hidden md:flex btn btn-sm md:btn-md"
-//     >
-//       Logout
-//     </button> */}
-//   </>
-// ) : (
-//   // Show Login button if no user is logged in
-//   <Link
-//     to="/auth/login"
-//     className="hidden md:flex btn btn-sm md:btn-md"
-//   >
-//     Login
-//   </Link>
-// )}
-// </div> */}

@@ -18,7 +18,7 @@ const LatestLostAndFound = () => {
   useEffect(() => {
     // Fetch the latest items from the server
     fetch(
-      "https://assignment-11-server-raufur-web-10-0934.vercel.app/items?status=not_recovered&limit=6"
+      "https://assignment-11-server-raufur-web-10-0934.vercel.app/items?status=not_recovered&limit=8"
     ) // Fetch 6 latest items
       .then((res) => res.json())
       .then((data) => {
