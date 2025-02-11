@@ -28,6 +28,26 @@ const router = createBrowserRouter([
         path: "/allItem",
         element: <AllItem></AllItem>,
       },
+      // About Us
+      {
+        path: "/about",
+        element: <h1>About Us</h1>,
+      },
+      // contact Page
+      {
+        path: "/contact",
+        element: <h1>Contact Us</h1>,
+      },
+      // privacy Page
+      {
+        path: "/terms",
+        element: <h1>terms</h1>,
+      },
+      // All Item Page
+      {
+        path: "/privacy",
+        element: <h1>privacy</h1>,
+      },
 
       // Add Lost And Found Item Page
       {

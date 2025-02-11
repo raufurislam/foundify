@@ -9,7 +9,7 @@ const MainLayout = () => {
       <Navbar />
 
       {/* Main content with flexible height */}
-      <div className="flex-grow">
+      <div className="flex-grow mt-20">
         <Outlet />
       </div>
 
