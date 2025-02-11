@@ -294,7 +294,9 @@ const Navbar = () => {
       <NavLink
         to="/"
         className={({ isActive }) =>
-          isActive ? "text-blue-500 font-medium" : "text-gray-500 font-medium"
+          isActive
+            ? "text-blue-500 font-medium underline-offset-4 underline lg:no-underline lg:border-blue-500 lg:border-b-2"
+            : "text-slate-700 hover:text-blue-700 font-medium"
         }
         onClick={() => setMobileMenuVisible(false)} // Close mobile menu
       >
@@ -303,7 +305,9 @@ const Navbar = () => {
       <NavLink
         to="/allItem"
         className={({ isActive }) =>
-          isActive ? "text-blue-500 font-medium" : "text-gray-500 font-medium"
+          isActive
+            ? "text-blue-500 font-medium underline-offset-4 underline lg:no-underline lg:border-blue-500 lg:border-b-2"
+            : "text-slate-700 hover:text-blue-700 font-medium"
         }
         onClick={() => setMobileMenuVisible(false)} // Close mobile menu
       >
@@ -311,7 +315,11 @@ const Navbar = () => {
       </NavLink>
       <NavLink
         to="/terms"
-        className="text-gray-500 font-medium"
+        className={({ isActive }) =>
+          isActive
+            ? "text-blue-500 font-medium underline-offset-4 underline lg:no-underline lg:border-blue-500 lg:border-b-2"
+            : "text-slate-700 hover:text-blue-700 font-medium"
+        }
         onClick={() => setMobileMenuVisible(false)} // Close mobile menu
       >
         terms
@@ -319,7 +327,9 @@ const Navbar = () => {
       <NavLink
         to="/about"
         className={({ isActive }) =>
-          isActive ? "text-blue-500 font-medium" : "text-gray-500 font-medium"
+          isActive
+            ? "text-blue-500 font-medium underline-offset-4 underline lg:no-underline lg:border-blue-500 lg:border-b-2"
+            : "text-slate-700 hover:text-blue-700 font-medium"
         }
         onClick={() => setMobileMenuVisible(false)} // Close mobile menu
       >
@@ -328,14 +338,16 @@ const Navbar = () => {
       <NavLink
         to="/contact"
         className={({ isActive }) =>
-          isActive ? "text-blue-500 font-medium" : "text-gray-500 font-medium"
+          isActive
+            ? "text-blue-500 font-medium underline-offset-4 underline lg:no-underline lg:border-blue-500 lg:border-b-2"
+            : "text-slate-700 hover:text-blue-700 font-medium"
         }
         onClick={() => setMobileMenuVisible(false)} // Close mobile menu
       >
         Contact us
       </NavLink>
 
-      {user && user.email ? (
+      {/* {user && user.email ? (
         <button
           onClick={() => {
             handleLogout();
@@ -353,7 +365,7 @@ const Navbar = () => {
         >
           Login
         </Link>
-      )}
+      )} */}
     </div>
   );
 
@@ -394,14 +406,14 @@ const Navbar = () => {
   );
 
   return (
-    <div className="fixed top-0 w-full z-50 bg-white/50 shadow-sm backdrop-blur-md transition-all duration-300">
-      <div className="max-w-screen-xl mx-auto navbar">
+    <div className="fixed top-0 w-full z-50 bg-white/60 shadow-sm backdrop-blur-md transition-all duration-300">
+      <div className="max-w-screen-xl mx-auto navbar lg:px-2 px-4">
         {/* Navbar Start */}
         <div className="navbar-start">
           <div className="dropdown">
             <button
               tabIndex={0}
-              className="btn btn-ghost lg:hidden"
+              className="btn btn-ghost pl-0 lg:hidden"
               onClick={() => setMobileMenuVisible(!mobileMenuVisible)}
             >
               <svg

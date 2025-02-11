@@ -79,7 +79,7 @@ const Banner = () => {
                   </p>
                   <Link
                     to="/allItem"
-                    className="btn btn-neutral mt-8 w-full md:w-auto"
+                    className="btn btn-neutral text-white mt-8 w-full md:w-auto"
                   >
                     Explore Now
                   </Link>

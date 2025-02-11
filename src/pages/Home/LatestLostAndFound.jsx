@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import ItemCard from "../AllLostAndFoundItem/ItemCard";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import Loading from "../loading/Loading";
 
 const LatestLostAndFound = () => {
   const [items, setItems] = useState([]);
@@ -30,7 +31,7 @@ const LatestLostAndFound = () => {
       });
   }, []);
 
-  // if (loading) return <Loading></Loading>;
+  if (loading) return <Loading></Loading>;
   // if (error) return <div>Error: {error}</div>;
 
   return (
@@ -44,7 +45,7 @@ const LatestLostAndFound = () => {
       <h1 className="lg:text-3xl md:text-2xl text-xl font-bold text-center mb-6">
         Latest Find & Lost Items
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:px-2 px-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:px-2 px-4">
         {items.map((item) => (
           <ItemCard key={item._id} item={item} />
         ))}
