@@ -72,23 +72,18 @@ const AddFoundAndLostItemPage = () => {
   return (
     <div className="max-w-screen-xl mx-auto lg:px-2 px-4">
       <Helmet>
-        <title>Add Item - Foundify</title>
+        <title>Add Item - Add Item</title>
       </Helmet>
 
       {/* headings */}
-      <div className="max-w-screen-xl mx-auto lg:px-2 px-4">
-        <Helmet>
-          <title>All Item - Contact Us</title>
-        </Helmet>
-        <div className="bg-base-200 py-12 text-center rounded-xl px-2">
-          <h1 className="lg:text-3xl md:text-2xl text-xl font-bold">
-            Report a Lost or Found Item
-          </h1>
-          <p className="mt-2  md:text-xl lg:max-w-2xl mx-auto">
-            Help reunite lost items with their owners or report an item you've
-            found. Fill in the details to make a difference!
-          </p>
-        </div>
+      <div className="bg-base-200 py-12 text-center rounded-xl px-4">
+        <h1 className="lg:text-4xl md:text-3xl text-2xl font-bold text-gray-800 ">
+          Report a Lost or Found Item
+        </h1>
+        <p className="md:text-xl font-normal md:w-3/5 mt-2 md:mt-3 mx-auto text-slate-500">
+          Help reunite lost items with their owners or report an item you've
+          found. Fill in the details to make a difference!
+        </p>
       </div>
 
       <div className="grid lg:grid-cols-2 items-center mt-12">

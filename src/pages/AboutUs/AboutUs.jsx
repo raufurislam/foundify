@@ -10,11 +10,11 @@ const AboutUs = () => {
       <Helmet>
         <title>Foundify - About Us</title>
       </Helmet>
-      <div className="bg-base-200 py-12 text-center rounded-xl">
-        <h1 className="lg:text-3xl md:text-2xl text-xl font-bold">
-          About Foundify
+      <div className="bg-base-200 py-12 text-center rounded-xl px-4">
+        <h1 className="lg:text-4xl md:text-3xl text-2xl font-bold text-gray-800">
+          About Us
         </h1>
-        <p className="mt-4 text-xl md:text-xl max-w-2xl mx-auto">
+        <p className="text-xl font-normal md:w-3/5 mt-2 md:mt-3 mx-auto text-slate-500">
           Connecting people to their lost belongings and making the world a more
           organized place.
         </p>
@@ -35,43 +35,65 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Meet the Team */}
+      {/* Team Section */}
       <section className="py-16 bg-white">
         <div className="max-w-screen-xl mx-auto px-4">
           <h2 className="text-3xl font-semibold text-center text-gray-800">
             Meet the Team
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-            <div className="bg-gray-100 p-6 rounded-lg shadow-md">
+            {/* Team Member 1 */}
+            <div className="bg-base-200 p-6 rounded-lg shadow-md">
+              <img
+                src="https://i.ibb.co.com/RNPS0xG/IMG-20240107-215349-956.jpg"
+                alt="Team Member 1"
+                className="w-24 h-24 mx-auto rounded-full object-cover"
+              />
               <h3 className="text-2xl font-semibold text-center text-gray-800 mt-4">
-                Raufur Islam Nayem
+                Raufur Islam
               </h3>
-              <p className="text-center text-gray-600 mt-2">Founder & CEO</p>
+              <p className="text-center text-gray-600 mt-2">Founder</p>
               <p className="mt-4 text-gray-600 text-center">
-                Raufur is passionate about building a connected community where
-                lost items can be returned to their rightful owners with ease.
+                Raufur is passionate about fostering connections and helping
+                individuals find their true soulmate. With over a decade of
+                experience in relationship counseling, he believes in the power
+                of love and understanding.
               </p>
             </div>
-            <div className="bg-gray-100 p-6 rounded-lg shadow-md">
+            {/* Team Member 2 */}
+            <div className="bg-base-200 p-6 rounded-lg shadow-md">
+              <img
+                src="https://t4.ftcdn.net/jpg/09/35/84/03/360_F_935840397_7miN8MVzz8BMEKPsOdqPKd0JTHZygNfv.jpg"
+                alt="Team Member 2"
+                className="w-24 h-24 mx-auto rounded-full object-cover"
+              />
               <h3 className="text-2xl font-semibold text-center text-gray-800 mt-4">
-                Jane Doe
+                Jane Smith
               </h3>
-              <p className="text-center text-gray-600 mt-2">Co-Founder & CTO</p>
+              <p className="text-center text-gray-600 mt-2">Co-Founder</p>
               <p className="mt-4 text-gray-600 text-center">
-                Jane leads the tech team, ensuring Foundify is powered by a
-                fast, reliable, and user-friendly platform.
+                Jane is dedicated to helping individuals discover the perfect
+                match for long-term, meaningful relationships. She brings a deep
+                understanding of human connections and strives to make Soulmate
+                a welcoming space for all.
               </p>
             </div>
-            <div className="bg-gray-100 p-6 rounded-lg shadow-md">
+            {/* Team Member 3 */}
+            <div className="bg-base-200 p-6 rounded-lg shadow-md">
+              <img
+                src="https://tiermaker.com/images/chart/chart/male-animated-cartoon-characters-912009/transparent-hiro-big-hero-6-37747465-427-378pngcrdownload.png"
+                alt="Team Member 3"
+                className="w-24 h-24 mx-auto bg-blue-300 rounded-full object-cover"
+              />
               <h3 className="text-2xl font-semibold text-center text-gray-800 mt-4">
-                Mark Johnson
+                Emily Johnson
               </h3>
-              <p className="text-center text-gray-600 mt-2">
-                Head of Operations
-              </p>
+              <p className="text-center text-gray-600 mt-2">Marketing Lead</p>
               <p className="mt-4 text-gray-600 text-center">
-                Mark ensures that Foundify runs smoothly, helping users connect
-                with lost and found items efficiently.
+                Emily is passionate about bringing awareness to the platform and
+                connecting people to their soulmates. With her expertise in
+                marketing and outreach, she ensures Soulmate is always a click
+                away for those in search of lasting love.
               </p>
             </div>
           </div>

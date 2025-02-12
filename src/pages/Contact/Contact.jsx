@@ -9,11 +9,11 @@ const Contact = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <div className="bg-base-200 py-12 text-center rounded-xl">
-        <h1 className="text-xl md:text-2xl lg:text-3xl font-bold">
+      <div className="bg-base-200 py-12 text-center rounded-xl px-4">
+        <h1 className="lg:text-4xl md:text-3xl text-2xl font-bold text-gray-800">
           Contact Us
         </h1>
-        <p className="mt-4 text-lg md:text-xl max-w-2xl mx-auto">
+        <p className="text-xl font-normal md:w-3/5 mt-2 md:mt-3 mx-auto text-slate-500">
           Have questions or need help? Reach out to us. We're here to assist
           you!
         </p>

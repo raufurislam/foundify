@@ -29,11 +29,12 @@ const AllRecoveredItemsPage = () => {
       <Helmet>
         <title>All Recovered - Foundify</title>
       </Helmet>
-      <div className="bg-base-200 py-12 text-center rounded-xl">
-        <h1 className="lg:text-3xl md:text-2xl text-xl font-bold">
+
+      <div className="bg-base-200 py-12 text-center rounded-xl px-4">
+        <h1 className="lg:text-4xl md:text-3xl text-2xl font-bold text-gray-800">
           Successfully Recovered Items
         </h1>
-        <p className="mt-4 text-xl md:text-xl max-w-2xl mx-auto">
+        <p className="md:text-xl font-normal md:w-3/5 mt-2 md:mt-3 mx-auto text-slate-500">
           These lost items have been found and reunited with their owners. Check
           out our success stories!
         </p>

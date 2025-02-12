@@ -3,17 +3,17 @@ import { Helmet } from "react-helmet-async";
 
 const TermsAndConditions = () => {
   return (
-    <div className="max-w-screen-xl mx-auto lg:px-2 px-4 py-12">
+    <div className="max-w-screen-xl mx-auto lg:px-2 px-4">
       <Helmet>
         <title>Foundify - Terms & Conditions</title>
       </Helmet>
 
       {/* Header Section */}
-      <div className="bg-base-200 py-12 text-center rounded-xl">
+      <div className="bg-base-200 py-12 text-center rounded-xl px-4">
         <h1 className="lg:text-4xl md:text-3xl text-2xl font-bold text-gray-800">
           Terms & Conditions
         </h1>
-        <p className="mt-4 text-lg md:text-xl max-w-2xl mx-auto text-gray-600">
+        <p className="md:text-xl font-normal md:w-3/5 mt-2 md:mt-3 mx-auto text-slate-500">
           Please read our terms carefully before using Foundify to ensure a safe
           and secure experience.
         </p>
