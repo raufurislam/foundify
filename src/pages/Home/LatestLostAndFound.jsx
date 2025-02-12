@@ -51,7 +51,10 @@ const LatestLostAndFound = () => {
         ))}
       </div>
       <div className="text-center mt-8">
-        <Link to="/allItem" className="btn btn-primary px-6 py-2 rounded-md">
+        <Link
+          to="/allItem"
+          className="btn btn-outline hover:btn-neutral px-6 py-2 rounded-md"
+        >
           See All Items
         </Link>
       </div>

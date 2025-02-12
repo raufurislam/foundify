@@ -443,7 +443,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="fixed top-0 w-full z-50 bg-white/60 shadow-sm backdrop-blur-md transition-all duration-300">
+    <div className="fixed top-0 w-full z-50 bg-white/80 shadow-sm backdrop-blur-xl transition-all duration-300">
       <div className="max-w-screen-xl mx-auto navbar lg:px-2 px-4">
         {/* Navbar Start */}
         <div className="navbar-start">
