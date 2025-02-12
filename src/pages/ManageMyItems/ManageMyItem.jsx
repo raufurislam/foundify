@@ -114,20 +114,24 @@ const ManageMyItems = () => {
       <Helmet>
         <title>All Recovered - Foundify</title>
       </Helmet>
-      {/* ....................................... */}
-      {/* <div className="bg-base-200 py-16 rounded-xl">
-        <h1 className="text-center text-4xl font-semibold">Manage My Items</h1>
-      </div> */}
-      {/* ....................................... */}
-      <div className="bg-base-200 py-16 rounded-xl">
-        <h1 className="text-center lg:text-4xl md:text-3xl text-2xl font-bold">
-          Manage My Items
+
+      <div className="bg-base-200 py-12 text-center rounded-xl">
+        <h1 className="lg:text-3xl md:text-2xl text-xl font-bold">
+          Manage Your Lost & Found Listings
         </h1>
+        <p className="mt-4 text-xl md:text-xl max-w-2xl mx-auto">
+          View, edit, or remove your lost and found posts in one convenient
+          place.
+        </p>
       </div>
       {myItems.length === 0 ? (
         <div className="max-w-screen-lg mx-auto text-center grid grid-cols-1 md:grid-cols-2 mt-12 items-center justify-between gap-5">
           <div className="md:ml-12">
-            <Lottie className="w-[400px]" loop={true} animationData={empty} />
+            <Lottie
+              className="w-[300px] md:[400px] mx-auto"
+              loop={true}
+              animationData={empty}
+            />
           </div>
           <div className="md:text-left text-center mt-5 md:mt-0">
             <p className="text-2xl text-gray-600">
@@ -135,7 +139,7 @@ const ManageMyItems = () => {
               <br />
               <span className="text-xl">Start adding lost or found items.</span>
             </p>
-            <Link to="/addItem" className="btn btn-primary mt-3">
+            <Link to="/addItem" className="btn btn-neutral text-white mt-5">
               Add Lost & Found
             </Link>
           </div>

@@ -74,140 +74,178 @@ const AddFoundAndLostItemPage = () => {
       <Helmet>
         <title>Add Item - Foundify</title>
       </Helmet>
-      <div className="bg-base-200 py-16 rounded-xl">
-        <h1 className="text-center lg:text-4xl md:text-3xl text-2xl font-bold">
-          Add Lost And Found Section
-        </h1>
+
+      {/* headings */}
+      <div className="max-w-screen-xl mx-auto lg:px-2 px-4">
+        <Helmet>
+          <title>All Item - Contact Us</title>
+        </Helmet>
+        <div className="bg-base-200 py-12 text-center rounded-xl px-2">
+          <h1 className="lg:text-3xl md:text-2xl text-xl font-bold">
+            Report a Lost or Found Item
+          </h1>
+          <p className="mt-2  md:text-xl lg:max-w-2xl mx-auto">
+            Help reunite lost items with their owners or report an item you've
+            found. Fill in the details to make a difference!
+          </p>
+        </div>
       </div>
-      <div className="max-w-screen-xl my-4 py-8 rounded-xl">
-        <h1 className="lg:text-3xl md:text-2xl text-xl font-bold mb-6 lg:w-2/5">
-          Let’s work together to bring peace of mind to those who’ve lost
-          something special.
-        </h1>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          {/* Post Type */}
-          <div>
-            <label className="block font-medium mb-1">Post Type</label>
-            <select
-              name="postType"
-              className="w-full border rounded-lg px-3 py-2"
-              required
-              defaultValue=""
-            >
-              <option value="" disabled>
-                Select lost or found
-              </option>
-              <option value="Lost">Lost</option>
-              <option value="Found">Found</option>
-            </select>
-          </div>
 
-          {/* Thumbnail */}
-          <div>
-            <label className="block font-medium mb-1">Thumbnail URL</label>
-            <input
-              type="url"
-              name="thumbnail"
-              placeholder="Enter a thumbnail URL"
-              className="w-full border rounded-lg px-3 py-2"
-              required
-            />
-          </div>
+      <div className="grid lg:grid-cols-2 items-center mt-12">
+        {/* design part */}
+        <div className="">
+          {/* <h2 className="text-3xl font-semibold">Let us know</h2> */}
+          <img
+            className="w-full md:w-1/2 lg:w-full mx-auto object-cover"
+            src="https://i.ibb.co.com/zHQHbFNb/a.png"
+            alt=""
+          />
+        </div>
 
-          {/* Title */}
-          <div>
-            <label className="block font-medium mb-1">Title</label>
-            <input
-              type="text"
-              name="title"
-              placeholder="Enter the title"
-              className="w-full border rounded-lg px-3 py-2"
-              required
-            />
-          </div>
+        {/* Form  */}
+        <div className="max-w-screen-xl rounded-xl">
+          <h1 className="lg:text-3xl md:text-2xl text-xl font-bold mb-6 ">
+            Add item
+          </h1>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="grid md:grid-cols-2 gap-5">
+              {/* Post Type */}
+              <div>
+                <label className="block font-medium mb-1 w-full">
+                  Post Type
+                </label>
+                <select
+                  name="postType"
+                  className="w-full border rounded-lg px-3 py-2 "
+                  required
+                  defaultValue=""
+                >
+                  <option value="" disabled>
+                    Select lost or found
+                  </option>
+                  <option value="Lost">Lost</option>
+                  <option value="Found">Found</option>
+                </select>
+              </div>
 
-          {/* Description */}
-          <div>
-            <label className="block font-medium mb-1">Description</label>
-            <textarea
-              name="description"
-              className="w-full border rounded-lg px-3 py-2"
-              rows="4"
-              required
-              placeholder="Write the description here."
-            ></textarea>
-          </div>
+              {/* Category */}
+              <div>
+                <label className="block font-medium mb-1">Category</label>
+                <select
+                  name="category"
+                  className="w-full border rounded-lg px-3 py-2"
+                  required
+                  defaultValue=""
+                >
+                  <option value="" disabled>
+                    Select Category
+                  </option>
+                  <option value="Pets">Pets</option>
+                  <option value="Documents">Documents</option>
+                  <option value="Gadgets">Gadgets</option>
+                  <option value="Clothing">Clothing</option>
+                  <option value="Jewelry">Jewelry</option>
+                  <option value="Others">Others</option>
+                </select>
+              </div>
+            </div>
 
-          {/* Category */}
-          <div>
-            <label className="block font-medium mb-1">Category</label>
-            <select
-              name="category"
-              className="w-full border rounded-lg px-3 py-2"
-              required
-              defaultValue=""
-            >
-              <option value="" disabled>
-                Select Category
-              </option>
-              <option value="Pets">Pets</option>
-              <option value="Documents">Documents</option>
-              <option value="Gadgets">Gadgets</option>
-              <option value="Clothing">Clothing</option>
-              <option value="Jewelry">Jewelry</option>
-              <option value="Others">Others</option>
-            </select>
-          </div>
+            <div className="grid md:grid-cols-2 gap-5">
+              {/* Title */}
+              <div>
+                <label className="block font-medium mb-1">Title</label>
+                <input
+                  type="text"
+                  name="title"
+                  placeholder="Enter the title"
+                  className="w-full border rounded-lg px-3 py-2"
+                  required
+                />
+              </div>
+              {/* Thumbnail */}
+              <div>
+                <label className="block font-medium mb-1">Thumbnail URL</label>
+                <input
+                  type="url"
+                  name="thumbnail"
+                  placeholder="Enter a thumbnail URL"
+                  className="w-full border rounded-lg px-3 py-2"
+                  required
+                />
+              </div>
+            </div>
 
-          {/* Location */}
-          <div>
-            <label className="block font-medium mb-1">Location</label>
-            <input
-              type="text"
-              name="location"
-              className="w-full border rounded-lg px-3 py-2"
-              required
-              placeholder="Enter the location"
-            />
-          </div>
+            {/* Description */}
+            <div>
+              <label className="block font-medium mb-1">Description</label>
+              <textarea
+                name="description"
+                className="w-full border rounded-lg px-3 py-2"
+                rows="4"
+                required
+                placeholder="Write the description here."
+              ></textarea>
+            </div>
 
-          {/* Date */}
-          <div>
-            <label className="block font-medium mb-1">Date</label>
-            <DatePicker
-              selected={date}
-              onChange={(selectedDate) => setDate(selectedDate)}
-              maxDate={new Date()} // Disable future dates
-              dateFormat="yyyy-MM-dd" // Display format
-              className="w-full border rounded-lg px-3 py-2"
-              required
-            />
-          </div>
+            <div className="grid md:grid-cols-2 gap-5">
+              {/* Date */}
+              <div>
+                <label className="block font-medium mb-1">Date</label>
+                <DatePicker
+                  selected={date}
+                  onChange={(selectedDate) => setDate(selectedDate)}
+                  maxDate={new Date()} // Disable future dates
+                  dateFormat="yyyy-MM-dd" // Display format
+                  className="border rounded-lg px-3 py-2"
+                  required
+                />
+              </div>
+              {/* Location */}
+              <div>
+                <label className="block font-medium mb-1">Location</label>
+                <input
+                  type="text"
+                  name="location"
+                  className="w-full border rounded-lg px-3 py-2"
+                  required
+                  placeholder="Enter the location"
+                />
+              </div>
+            </div>
 
-          {/* Contact Info */}
-          <div>
-            <label className="block font-medium mb-1">
-              Contact Information
-            </label>
-            <input
-              type="text"
-              value={user?.displayName || "Anonymous"}
-              disabled
-              className="w-full border rounded-lg px-3 py-2 bg-gray-100"
-            />
-            <input
-              type="email"
-              value={user?.email || "N/A"}
-              disabled
-              className="w-full border rounded-lg px-3 py-2 bg-gray-100 mt-2"
-            />
-          </div>
+            {/* Contact Info */}
+            <div>
+              <label className="block font-medium mb-1">
+                Contact Information
+              </label>
+              <div className="grid md:grid-cols-2 gap-5">
+                <div>
+                  <input
+                    type="text"
+                    value={user?.displayName || "Anonymous"}
+                    disabled
+                    className="w-full border rounded-lg px-3 py-2 bg-gray-100"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="email"
+                    value={user?.email || "N/A"}
+                    disabled
+                    className="w-full border rounded-lg px-3 py-2 bg-gray-100 "
+                  />
+                </div>
+              </div>
+            </div>
 
-          {/* Submit Button */}
-          <div className="form-control mt-6">
-            <button className="btn btn-primary">Submit</button>
-          </div>
-        </form>
+            {/* Submit Button */}
+            <div className="form-control mt-6">
+              <button className="md:w-28 mt-2 text-white btn btn-neutral">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );

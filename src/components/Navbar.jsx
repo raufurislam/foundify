@@ -383,26 +383,6 @@ const Navbar = () => {
       >
         Contact us
       </NavLink>
-
-      {/* {user && user.email ? (
-            <button
-              onClick={() => {
-                handleLogout();
-                setMobileMenuVisible(false); // Close mobile menu
-              }}
-              className="md:hidden text-left"
-            >
-              Logout
-            </button>
-          ) : (
-            <Link
-              to="/auth/login"
-              className="md:hidden"
-              onClick={() => setMobileMenuVisible(false)} // Close mobile menu
-            >
-              Login
-            </Link>
-          )} */}
     </div>
   );
 
@@ -411,7 +391,9 @@ const Navbar = () => {
       <NavLink
         to="/addItem"
         className={({ isActive }) =>
-          isActive ? "text-blue-500 font-medium" : "text-gray-500 font-medium"
+          isActive
+            ? "text-blue-500 font-medium underline-offset-4 underline"
+            : "text-slate-700 hover:text-blue-700 font-medium"
         }
       >
         Add Lost And Found
@@ -419,7 +401,9 @@ const Navbar = () => {
       <NavLink
         to="/allRecover"
         className={({ isActive }) =>
-          isActive ? "text-blue-500 font-medium" : "text-gray-500 font-medium"
+          isActive
+            ? "text-blue-500 font-medium underline-offset-4 underline"
+            : "text-slate-700 hover:text-blue-700 font-medium"
         }
       >
         All Recovered Item
@@ -427,7 +411,9 @@ const Navbar = () => {
       <NavLink
         to="/myItems"
         className={({ isActive }) =>
-          isActive ? "text-blue-500 font-medium" : "text-gray-500 font-medium"
+          isActive
+            ? "text-blue-500 font-medium underline-offset-4 underline "
+            : "text-slate-700 hover:text-blue-700 font-medium"
         }
       >
         Manage My Item
@@ -435,7 +421,7 @@ const Navbar = () => {
       {/* Logout Button (only when logged in) */}
       <button
         onClick={handleLogout}
-        className="text-gray-500 font-medium text-left"
+        className="text-slate-700 hover:text-blue-700 font-medium text-left"
       >
         Logout{" "}
       </button>

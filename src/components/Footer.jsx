@@ -5,7 +5,7 @@ import { GrFacebookOption } from "react-icons/gr";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-10">
+    <footer className="bg-neutral text-white py-10">
       <div className="max-w-screen-xl mx-auto lg:px-2 px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Section 1: About */}
         <div className="text-center md:text-left">

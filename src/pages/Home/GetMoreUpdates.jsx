@@ -17,7 +17,7 @@ const GetMoreUpdates = () => {
         <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-lg p-6 md:p-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-4">
-              <FaBell className="text-5xl text-teal-500 animate-pulse" />
+              <FaBell className="text-5xl text-blue-500 animate-pulse" />
               <h3 className="text-xl font-semibold text-gray-700">
                 Get Notified Instantly
               </h3>
@@ -26,19 +26,16 @@ const GetMoreUpdates = () => {
               <input
                 type="email"
                 placeholder="Enter your email address"
-                className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-teal-500"
+                className="w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-teal-500"
               />
-              <button
-                type="submit"
-                className="w-full sm:w-auto px-6 py-2 bg-teal-500 text-white font-semibold rounded-md hover:bg-teal-600 transition"
-              >
+              <button type="submit" className="btn btn-neutral text-white">
                 Subscribe
               </button>
             </form>
           </div>
           <div className="text-center mt-6">
             <p className="text-gray-600">
-              <FaEnvelope className="inline text-teal-500 mr-2" />
+              <FaEnvelope className="inline mr-2 " />
               We'll never spam you or share your email.
             </p>
           </div>

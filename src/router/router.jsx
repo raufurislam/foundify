@@ -11,6 +11,9 @@ import AllItem from "../pages/AllLostAndFoundItem/AllItem";
 import DetailsPage from "../pages/DetailsPage/DetailsPage";
 import ManageMyItems from "../pages/ManageMyItems/ManageMyItem";
 import AllRecoveredItemsPage from "../pages/AllRecoveredItemsPage/AllRecoveredItemsPage";
+import Contact from "../pages/Contact/Contact";
+import AboutUs from "../pages/AboutUs/AboutUs";
+import TermsAndCondition from "../pages/TermsAndCondition/TermsAndCondition";
 
 const router = createBrowserRouter([
   {
@@ -31,17 +34,17 @@ const router = createBrowserRouter([
       // About Us
       {
         path: "/about",
-        element: <h1>About Us</h1>,
+        element: <AboutUs></AboutUs>,
       },
       // contact Page
       {
         path: "/contact",
-        element: <h1>Contact Us</h1>,
+        element: <Contact></Contact>,
       },
       // privacy Page
       {
         path: "/terms",
-        element: <h1>terms</h1>,
+        element: <TermsAndCondition></TermsAndCondition>,
       },
       // All Item Page
       {

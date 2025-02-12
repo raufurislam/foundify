@@ -29,10 +29,14 @@ const AllRecoveredItemsPage = () => {
       <Helmet>
         <title>All Recovered - Foundify</title>
       </Helmet>
-      <div className="bg-base-200 py-16 rounded-xl">
-        <h1 className="text-center lg:text-4xl md:text-3xl text-2xl font-bold">
-          All Recovered Items
+      <div className="bg-base-200 py-12 text-center rounded-xl">
+        <h1 className="lg:text-3xl md:text-2xl text-xl font-bold">
+          Successfully Recovered Items
         </h1>
+        <p className="mt-4 text-xl md:text-xl max-w-2xl mx-auto">
+          These lost items have been found and reunited with their owners. Check
+          out our success stories!
+        </p>
       </div>
 
       <div className="hidden md:block text-right mt-4">
@@ -48,12 +52,12 @@ const AllRecoveredItemsPage = () => {
         <div className="max-w-screen-lg mx-auto text-center grid grid-cols-1 md:grid-cols-2 mt-12 items-center justify-between gap-5">
           <div className="md:ml-12">
             <Lottie
-              className="w-[400px]"
+              className="w-[300px] md:[400px] mx-auto"
               loop={true}
               animationData={recoverEmpty}
             />
           </div>
-          <div className="md:text-left text-center mt-5 md:mt-0">
+          <div className="md:text-left text-center mt-1 md:mt-0">
             <p className="text-2xl text-gray-600">
               <span className="font-semibold text-2xl">
                 No recovered items found!
@@ -61,7 +65,7 @@ const AllRecoveredItemsPage = () => {
               <br />
               <span className="text-xl">Check back later for updates.</span>
             </p>
-            <Link to="/" className="btn btn-primary mt-3">
+            <Link to="/" className="btn btn-neutral text-white mt-5">
               Go back to Home page
             </Link>
           </div>

@@ -42,7 +42,7 @@ const Banner = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="max-w-screen-xl mx-auto pt-4 lg:px-2 px-4">
+    <div className="max-w-screen-xl mx-auto pt-2 lg:px-2 px-4">
       <div className="rounded-lg bg-base-200 lg:px-12 px-4 md:px-7 py-5">
         <Swiper
           loop={true}

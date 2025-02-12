@@ -58,10 +58,14 @@ const AllItem = () => {
       <Helmet>
         <title>All Item - Foundify</title>
       </Helmet>
-      <div className="bg-base-200 py-16 rounded-xl">
-        <h1 className="text-center lg:text-4xl md:text-3xl text-2xl font-bold">
+      <div className="bg-base-200 py-12 text-center rounded-xl">
+        <h1 className="lg:text-4xl md:text-3xl text-2xl font-bold">
           All Lost and Found Items
         </h1>
+        <p className="text-xl font-normal md:w-3/5 mt-3 mx-auto text-slate-500">
+          A live feed of the most recent lost and found cases. Help out by
+          reporting or claiming lost valuables today!
+        </p>
       </div>
 
       {/* Search and Filters */}
