@@ -381,7 +381,7 @@ const Navbar = () => {
         }
         onClick={() => setMobileMenuVisible(false)} // Close mobile menu
       >
-        Contact us
+        Contact Us
       </NavLink>
     </div>
   );

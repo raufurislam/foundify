@@ -38,18 +38,23 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="/addItem" className="text-gray-400 hover:text-white">
-                Add Lost & Found Item
+              <a href="/allItem" className="text-gray-400 hover:text-white">
+                Lost & Found Items
               </a>
             </li>
             <li>
-              <a href="/myItems" className="text-gray-400 hover:text-white">
-                Manage My Items
+              <a href="/terms" className="text-gray-400 hover:text-white">
+                Terms & Conditions
               </a>
             </li>
             <li>
-              <a href="/allRecover" className="text-gray-400 hover:text-white">
-                Recovered Items
+              <a href="/about" className="text-gray-400 hover:text-white">
+                About Us
+              </a>
+            </li>
+            <li>
+              <a href="/contact" className="text-gray-400 hover:text-white">
+                Contact Us
               </a>
             </li>
           </ul>
