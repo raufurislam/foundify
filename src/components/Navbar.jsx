@@ -359,7 +359,7 @@ const Navbar = () => {
         }
         onClick={() => setMobileMenuVisible(false)} // Close mobile menu
       >
-        terms
+        Terms & Conditions
       </NavLink>
       <NavLink
         to="/about"
