@@ -89,7 +89,6 @@ const AddFoundAndLostItemPage = () => {
       <div className="grid lg:grid-cols-2 items-center mt-12">
         {/* design part */}
         <div className="">
-          {/* <h2 className="text-3xl font-semibold">Let us know</h2> */}
           <img
             className="w-full md:w-1/2 lg:w-full mx-auto object-cover"
             src="https://i.ibb.co.com/zHQHbFNb/a.png"
@@ -98,7 +97,7 @@ const AddFoundAndLostItemPage = () => {
         </div>
 
         {/* Form  */}
-        <div className="max-w-screen-xl rounded-xl">
+        <div className="max-w-screen-xl rounded-xl mt-12 md:mt-0">
           <h1 className="lg:text-3xl md:text-2xl text-xl font-bold mb-6 ">
             Add item
           </h1>

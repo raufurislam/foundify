@@ -19,26 +19,20 @@ const Contact = () => {
         </p>
       </div>
 
-      {/* Contact Information */}
-      {/* <section className="py-16 text-center">
-        <h2 className="text-3xl font-semibold ">Get In Touch</h2>
-        <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-          Whether you have a question, suggestion, or need support, we’re here
-          to help. Contact us using the form below, or reach out to us directly.
-        </p>
-      </section> */}
-
       {/* Contact Form & Details */}
-      <section className="py-16 bg-white">
-        <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 px-4">
+      <section className=" bg-white lg:pt-16 pt-12">
+        <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="space-y-6">
-            <h3 className="text-2xl font-semibold text-gray-800">
+          <div className="md:space-y-6 space-y-4">
+            <h3 className="lg:text-3xl md:text-2xl text-xl font-bold md:font-semibold text-center mb-6 md:text-left">
               Send Us a Message
             </h3>
             <form action="#" method="POST" className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-lg text-gray-700">
+                <label
+                  htmlFor="name"
+                  className="block md:text-lg text-gray-700 "
+                >
                   Full Name
                 </label>
                 <input
@@ -50,7 +44,10 @@ const Contact = () => {
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-lg text-gray-700">
+                <label
+                  htmlFor="email"
+                  className="block md:text-lg text-gray-700"
+                >
                   Email Address
                 </label>
                 <input
@@ -64,7 +61,7 @@ const Contact = () => {
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-lg text-gray-700"
+                  className="block md:text-lg text-gray-700"
                 >
                   Message
                 </label>
@@ -86,22 +83,20 @@ const Contact = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-6">
-            <h3 className="text-2xl font-semibold text-gray-800">
+          <div className="md:space-y-6 space-y-4">
+            <h3 className="lg:text-3xl md:text-2xl text-xl font-bold md:font-semibold text-center mb-6 md:text-left">
               Our Contact Information
             </h3>
             <div>
-              <h4 className="text-lg font-semibold text-gray-800">Email</h4>
+              <h4 className="text-lg font-semibold ">Email</h4>
               <p className="text-gray-600">support@foundify.com</p>
             </div>
             <div>
-              <h4 className="text-lg font-semibold text-gray-800">Phone</h4>
+              <h4 className="text-lg font-semibold ">Phone</h4>
               <p className="text-gray-600">+1 (800) 123-4567</p>
             </div>
             <div>
-              <h4 className="text-lg font-semibold text-gray-800">
-                Social Media
-              </h4>
+              <h4 className="text-lg font-semibold ">Social Media</h4>
               <div className="flex space-x-6">
                 <a
                   href="https://www.facebook.com"
@@ -128,15 +123,17 @@ const Contact = () => {
       </section>
 
       {/* Map Section */}
-      <section className="py-10 bg-gray-50">
-        <div className="max-w-screen-xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-semibold ">Find Us Here</h2>
+      <section className="lg:pt-16 pt-12">
+        <div className="text-center">
+          <h2 className="lg:text-3xl md:text-2xl text-xl font-bold md:font-semibold text-center mb-6">
+            Find Us Here
+          </h2>
           <div className="mt-6">
             <iframe
               src="https://www.google.com/maps/embed?pb=...your-map-link..."
               width="600"
               height="450"
-              className="w-full h-full border-0"
+              className="w-full h-full border-0 rounded-xl"
               allowFullScreen=""
               loading="lazy"
             ></iframe>
@@ -145,18 +142,22 @@ const Contact = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-base-200 text-center">
-        <h2 className="text-3xl font-semibold">We'd Love to Hear From You</h2>
-        <p className="mt-4 text-lg max-w-2xl mx-auto">
-          If you have any questions or need assistance, don’t hesitate to reach
-          out. We’re always here to help you.
-        </p>
-        <div className="mt-6">
-          <a href="/contact" className="btn btn-neutral text-white">
-            Contact Us
-          </a>
-        </div>
-      </section>
+      <div className="lg:py-16 py-12">
+        <section className="py-10 bg-base-200 px-4 text-center rounded-xl">
+          <h2 className="lg:text-3xl md:text-2xl text-xl font-bold md:font-semibold text-center mb-6">
+            We'd Love to Hear From You
+          </h2>
+          <p className="md:mt-3 mt-2 md:text-lg max-w-2xl mx-auto">
+            If you have any questions or need assistance, don’t hesitate to
+            reach out. We’re always here to help you.
+          </p>
+          <div className="mt-6">
+            <a href="/contact" className="btn btn-neutral text-white">
+              Contact Us
+            </a>
+          </div>
+        </section>
+      </div>
     </div>
   );
 };

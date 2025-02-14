@@ -10,7 +10,7 @@ const Faq = () => {
 
   return (
     <div className="max-w-screen-xl mx-auto px-4 lg:px-2 flex flex-col gap-3">
-      <h1 className="lg:text-3xl md:text-2xl text-xl font-bold text-center lg:mb-6 mb-3">
+      <h1 className="lg:text-3xl md:text-2xl text-xl font-bold text-center lg:mb-4 mb-3">
         Frequently Asked Questions
       </h1>
       <div className="collapse collapse-plus bg-base-200 shadow-sm">

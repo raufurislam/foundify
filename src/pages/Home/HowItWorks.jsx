@@ -49,27 +49,25 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section className="max-w-screen-xl mx-auto">
-      <div className="container mx-auto lg:px-2 px-4">
-        <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center mb-8">
-          How It Works
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
-          {steps.map((step, index) => (
-            <div
-              key={index}
-              className="bg-base-200 shadow-md rounded-lg p-6 text-center"
-            >
-              <div className="mb-4 flex justify-center">{step.icon}</div>
-              <h3 className="text-xl font-semibold text-gray-700 mb-2">
-                {step.title}
-              </h3>
-              <p className="text-gray-600">{step.description}</p>
-            </div>
-          ))}
-        </div>
+    <div className="max-w-screen-xl mx-auto  lg:px-2 px-4">
+      <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center mb-6">
+        How It Works
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
+        {steps.map((step, index) => (
+          <div
+            key={index}
+            className="bg-base-200 shadow-md rounded-lg p-6 text-center"
+          >
+            <div className="mb-4 flex justify-center">{step.icon}</div>
+            <h3 className="text-xl font-semibold text-gray-700 mb-2">
+              {step.title}
+            </h3>
+            <p className="text-gray-600">{step.description}</p>
+          </div>
+        ))}
       </div>
-    </section>
+    </div>
   );
 };
 

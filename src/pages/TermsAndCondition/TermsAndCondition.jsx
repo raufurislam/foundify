@@ -20,13 +20,13 @@ const TermsAndConditions = () => {
       </div>
 
       {/* Terms Content */}
-      <section className="py-16 bg-white">
+      <section className="py-12 bg-white">
         <div className="">
           {/* Introduction */}
-          <h2 className="text-3xl font-semibold text-gray-800 text-center">
+          <h2 className="lg:text-3xl md:text-2xl text-xl font-bold md:font-semibold text-center">
             Welcome to Foundify!
           </h2>
-          <p className="lg:w-3/5 mx-auto mt-4 text-lg text-gray-600 text-center">
+          <p className="lg:w-3/5 mx-auto mt-4 md:text-lg text-gray-600 text-center">
             By using our platform, you agree to comply with the following terms.
             These terms outline the rules and regulations for the use of our
             website and services.
@@ -35,7 +35,7 @@ const TermsAndConditions = () => {
           {/* Terms List */}
           <div className="mt-12 space-y-8">
             <div>
-              <h3 className="text-2xl font-semibold text-gray-800">
+              <h3 className="lg:text-2xl md:text-xl text-lg font-semibold text-gray-800">
                 1. User Responsibilities
               </h3>
               <p className="mt-2 text-gray-600">
@@ -45,7 +45,7 @@ const TermsAndConditions = () => {
               </p>
             </div>
             <div>
-              <h3 className="text-2xl font-semibold text-gray-800">
+              <h3 className="lg:text-2xl md:text-xl text-lg font-semibold text-gray-800">
                 2. Listing Lost & Found Items
               </h3>
               <p className="mt-2 text-gray-600">
@@ -54,7 +54,7 @@ const TermsAndConditions = () => {
               </p>
             </div>
             <div>
-              <h3 className="text-2xl font-semibold text-gray-800">
+              <h3 className="lg:text-2xl md:text-xl text-lg font-semibold text-gray-800">
                 3. Privacy & Data Protection
               </h3>
               <p className="mt-2 text-gray-600">
@@ -63,7 +63,7 @@ const TermsAndConditions = () => {
               </p>
             </div>
             <div>
-              <h3 className="text-2xl font-semibold text-gray-800">
+              <h3 className="lg:text-2xl md:text-xl text-lg font-semibold text-gray-800">
                 4. Prohibited Activities
               </h3>
               <p className="mt-2 text-gray-600">
@@ -72,7 +72,7 @@ const TermsAndConditions = () => {
               </p>
             </div>
             <div>
-              <h3 className="text-2xl font-semibold text-gray-800">
+              <h3 className="lg:text-2xl md:text-xl text-lg font-semibold text-gray-800">
                 5. Liability Disclaimer
               </h3>
               <p className="mt-2 text-gray-600">
@@ -87,10 +87,10 @@ const TermsAndConditions = () => {
 
       {/* Call to Action */}
       <section className="py-16 bg-base-200 text-center">
-        <h2 className="text-3xl font-semibold text-gray-800">
+        <h2 className="lg:text-3xl md:text-2xl text-xl font-bold md:font-semibold text-center mb-6">
           Have Questions?
         </h2>
-        <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+        <p className="mt-4 md:text-lg text-gray-600 max-w-2xl mx-auto">
           If you need further clarification, feel free to contact our support
           team.
         </p>

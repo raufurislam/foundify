@@ -40,7 +40,7 @@ const LatestLostAndFound = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
       transition={{ duration: 0.5 }}
-      className="max-w-screen-xl mx-auto"
+      className="max-w-screen-xl mx-auto lg:px-2 px-4"
     >
       <h1 className="lg:text-3xl md:text-2xl text-xl font-bold text-center mb-6">
         Latest Find & Lost Items

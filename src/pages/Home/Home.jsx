@@ -8,7 +8,8 @@ import { Helmet } from "react-helmet-async";
 
 const Home = () => {
   return (
-    <div className="lg:space-y-20 space-y-12">
+    <div className="lg:space-y-16 space-y-12">
+      {/* // <div className=""> */}
       <Helmet>
         <title>Home - Foundify</title>
       </Helmet>

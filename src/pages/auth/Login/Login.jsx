@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { FcGoogle } from "react-icons/fc";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -43,12 +43,21 @@ const Login = () => {
   };
 
   return (
-    <div className="mt-8 flex justify-center items-center lg:px-2 px-4">
+    <div className="mt-6 flex justify-center items-center lg:px-2 px-4">
       <Helmet>
         <title>Login - Foundify</title>
       </Helmet>
-      <div className="card bg-base-200 w-full max-w-lg shrink-0 rounded-xl py-8 md:p-10">
-        <h2 className="lg:text-3xl md:text-2xl text-2xl font-bold text-center">
+
+      <div className="card bg-base-200 w-full max-w-lg shrink-0 rounded-xl py-8 md:px-10 md:py-10">
+        <Link to="/" className="flex items-center justify-center text-center">
+          <img
+            src="https://i.ibb.co/5Gc9QGB/foundify-03.png"
+            className="w-16"
+            alt=""
+          />
+        </Link>
+
+        <h2 className="lg:text-3xl md:text-2xl text-2xl font-bold mt-4 text-center">
           Login to Your Account
         </h2>
         <form onSubmit={handleSubmit} className="card-body">

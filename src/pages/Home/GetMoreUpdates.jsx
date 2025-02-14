@@ -9,7 +9,7 @@ const GetMoreUpdates = () => {
           <h2 className="lg:text-3xl md:text-2xl text-xl font-bold">
             Stay Updated with the Latest News
           </h2>
-          <p className="text-gray-600 mt-4">
+          <p className="text-gray-600 mt-2">
             Subscribe to our newsletter and never miss an update about lost and
             found items!
           </p>

@@ -94,7 +94,7 @@ const AllItem = () => {
         </label>
       </div>
 
-      <div className="overflow-x-auto flex flex-col w-full md:flex-row justify-center items-center gap-5 mt-6 md:mt-10">
+      <div className="overflow-x-auto flex flex-col w-full md:flex-row justify-center items-center gap-5 mt-5 md:mt-10">
         <div className="hidden md:block">
           <label className="mx-auto input input-bordered flex items-center gap-2 w-full ">
             <input
