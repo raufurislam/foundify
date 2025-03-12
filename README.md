@@ -1,7 +1,7 @@
 # <img src="https://i.ibb.co.com/H46zND8/foundify-05.png" alt="Crowdcube Icon" width="28" height="28"> Foundify
 
-<div align="center">
-  <img height="auto" width="100%" src="https://i.ibb.co.com/KjSyH63s/Screenshot-205.png" />
+<div align="center" style="width: 100%; height: 580px; overflow: hidden; border-radius: 10px;">
+  <img src="https://i.ibb.co/pBJXRSrD/soulmate.jpg" alt="Foundify Banner" style="width: 100%; height: 100%; object-fit: cover;" />
 </div>
 
 A comprehensive platform designed to assist users in reporting and recovering lost items, as well as finding and returning found items. The application offers user authentication, a robust database for item records, and a responsive, intuitive interface to facilitate ease of use.
