@@ -1,5 +1,13 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
+import {
+  FaUserShield,
+  FaListUl,
+  FaLock,
+  FaBan,
+  FaExclamationTriangle,
+  FaPhoneAlt,
+} from "react-icons/fa";
 
 const TermsAndConditions = () => {
   return (
@@ -20,71 +28,95 @@ const TermsAndConditions = () => {
       </div>
 
       {/* Terms Content */}
-      <section className="py-12 bg-white">
-        <div className="">
-          {/* Introduction */}
-          <h2 className="lg:text-3xl md:text-2xl text-xl font-bold md:font-semibold text-center">
-            Welcome to Foundify!
-          </h2>
-          <p className="lg:w-3/5 mx-auto mt-4 md:text-lg text-gray-600 text-center">
-            By using our platform, you agree to comply with the following terms.
-            These terms outline the rules and regulations for the use of our
-            website and services.
-          </p>
-
-          {/* Terms List */}
-          <div className="mt-12 space-y-8">
-            <div>
-              <h3 className="lg:text-2xl md:text-xl text-lg font-semibold text-gray-800">
-                1. User Responsibilities
-              </h3>
-              <p className="mt-2 text-gray-600">
-                You must use Foundify responsibly. Any misuse, including
-                fraudulent claims of lost or found items, may result in
-                suspension of your account.
-              </p>
-            </div>
-            <div>
-              <h3 className="lg:text-2xl md:text-xl text-lg font-semibold text-gray-800">
-                2. Listing Lost & Found Items
-              </h3>
-              <p className="mt-2 text-gray-600">
-                All lost and found item listings must be accurate and truthful.
-                Misrepresentation of items may lead to account restrictions.
-              </p>
-            </div>
-            <div>
-              <h3 className="lg:text-2xl md:text-xl text-lg font-semibold text-gray-800">
-                3. Privacy & Data Protection
-              </h3>
-              <p className="mt-2 text-gray-600">
-                We value your privacy. Any personal data shared on Foundify is
-                protected under our Privacy Policy.
-              </p>
-            </div>
-            <div>
-              <h3 className="lg:text-2xl md:text-xl text-lg font-semibold text-gray-800">
-                4. Prohibited Activities
-              </h3>
-              <p className="mt-2 text-gray-600">
-                Users must not engage in harassment, spam, or inappropriate
-                content sharing. Violations will lead to account suspension.
-              </p>
-            </div>
-            <div>
-              <h3 className="lg:text-2xl md:text-xl text-lg font-semibold text-gray-800">
-                5. Liability Disclaimer
-              </h3>
-              <p className="mt-2 text-gray-600">
-                Foundify is a platform for connecting people with lost and found
-                items. We do not guarantee item recovery and are not liable for
-                misrepresentation or fraudulent claims.
-              </p>
-            </div>
+      {/* Terms Cards */}
+      {/* Terms Cards */}
+      <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="bg-gray-50 p-6 rounded-xl shadow-lg">
+          <div className="flex items-center mb-4">
+            <FaUserShield className="text-3xl text-blue-600 mr-4" />
+            <h3 className="lg:text-2xl md:text-xl text-lg font-semibold text-gray-800">
+              1. User Responsibilities
+            </h3>
           </div>
+          <p className="text-gray-600">
+            You must use Foundify responsibly. Any misuse, including fraudulent
+            claims of lost or found items, may result in suspension or
+            termination of your account.
+          </p>
         </div>
-      </section>
 
+        <div className="bg-gray-50 p-6 rounded-xl shadow-lg">
+          <div className="flex items-center mb-4">
+            <FaListUl className="text-3xl text-blue-600 mr-4" />
+            <h3 className="lg:text-2xl md:text-xl text-lg font-semibold text-gray-800">
+              2. Listing Lost & Found Items
+            </h3>
+          </div>
+          <p className="text-gray-600">
+            All lost and found item listings must be accurate and truthful.
+            Misrepresentation or false information will lead to immediate
+            account restrictions or suspension.
+          </p>
+        </div>
+
+        <div className="bg-gray-50 p-6 rounded-xl shadow-lg">
+          <div className="flex items-center mb-4">
+            <FaLock className="text-3xl text-blue-600 mr-4" />
+            <h3 className="lg:text-2xl md:text-xl text-lg font-semibold text-gray-800">
+              3. Privacy & Data Protection
+            </h3>
+          </div>
+          <p className="text-gray-600">
+            We value your privacy. Any personal data shared on Foundify is
+            securely stored and protected under our{" "}
+            <a href="/privacy-policy" className="text-blue-600">
+              Privacy Policy
+            </a>
+            .
+          </p>
+        </div>
+
+        <div className="bg-gray-50 p-6 rounded-xl shadow-lg">
+          <div className="flex items-center mb-4">
+            <FaBan className="text-3xl text-blue-600 mr-4" />
+            <h3 className="lg:text-2xl md:text-xl text-lg font-semibold text-gray-800">
+              4. Prohibited Activities
+            </h3>
+          </div>
+          <p className="text-gray-600">
+            Users must not engage in harassment, spamming, or sharing
+            inappropriate content. Violations of this policy will result in
+            account suspension or termination.
+          </p>
+        </div>
+
+        <div className="bg-gray-50 p-6 rounded-xl shadow-lg">
+          <div className="flex items-center mb-4">
+            <FaExclamationTriangle className="text-3xl text-blue-600 mr-4" />
+            <h3 className="lg:text-2xl md:text-xl text-lg font-semibold text-gray-800">
+              5. Liability Disclaimer
+            </h3>
+          </div>
+          <p className="text-gray-600">
+            Foundify serves as a platform for connecting individuals with lost
+            and found items. We do not guarantee item recovery and are not
+            responsible for any misrepresentation or fraudulent claims.
+          </p>
+        </div>
+
+        <div className="bg-gray-50 p-6 rounded-xl shadow-lg">
+          <div className="flex items-center mb-4">
+            <FaPhoneAlt className="text-3xl text-blue-600 mr-4" />
+            <h3 className="lg:text-2xl md:text-xl text-lg font-semibold text-gray-800">
+              6. Contact Us
+            </h3>
+          </div>
+          <p className="text-gray-600">
+            If you have any questions or concerns, feel free to reach out to our
+            support team for assistance.
+          </p>
+        </div>
+      </div>
       {/* Call to Action */}
       <section className="py-16 bg-base-200 text-center">
         <h2 className="lg:text-3xl md:text-2xl text-xl font-bold md:font-semibold text-center mb-6">
