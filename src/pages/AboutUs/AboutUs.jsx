@@ -1,6 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import useAuth from "../../hooks/useAuth";
+import { Link } from "react-router-dom";
 
 const AboutUs = () => {
   const { user } = useAuth();
@@ -117,24 +118,42 @@ const AboutUs = () => {
         </section>
       </div>
 
-      {/* Call to Action */}
+      {/* Call to Action
       {!user && (
-        <section className=" bg-blue-600 text-white text-center">
+        <section className=" p-5 bg-blue-600 text-white text-center">
           <h2 className="md:text-3xl text-2xl font-semibold">
             Join Foundify Today
           </h2>
-          <p className="mt-4 text-lg max-w-2xl mx-auto">
+          <p className="mt-4 text-lg  mx-auto">
             Sign up and be a part of a community dedicated to helping people
             find their lost belongings.
           </p>
-          <div className="mt-6">
-            <a
-              href="/auth/signUp"
-              className="px-6 py-3 bg-yellow-500 text-gray-800 font-semibold rounded-full hover:bg-yellow-400"
-            >
-              Get Started
-            </a>
-          </div>
+          <br />
+          <Link
+            to="/auth/signUp"
+            className="px-6 py-3 bg-yellow-500 text-gray-800 font-semibold rounded-full hover:bg-yellow-400"
+          >
+            Get Started
+          </Link>
+        </section>
+      )} */}
+
+      {/* Call to Action */}
+      {!user && (
+        <section className="p-5 bg-blue-600 text-white text-center">
+          <h2 className="text-2xl md:text-3xl font-semibold">
+            Join Foundify Today
+          </h2>
+          <p className="mt-4 text-lg mx-auto max-w-xl">
+            Sign up and be a part of a community dedicated to helping people
+            find their lost belongings.
+          </p>
+          <Link
+            to="/auth/login"
+            className="inline-block mt-6 px-6 py-3 bg-yellow-500 text-gray-800 font-semibold rounded-full hover:bg-yellow-400 transition-colors duration-300"
+          >
+            Get Started
+          </Link>
         </section>
       )}
     </div>
